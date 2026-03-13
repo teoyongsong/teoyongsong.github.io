@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -52,8 +56,6 @@ section {
   text-decoration: none;
   color: inherit;
   transition: border-color 0.2s, box-shadow 0.2s;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .project-card:hover {

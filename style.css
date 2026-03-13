@@ -14,7 +14,46 @@ header {
   background: #333;
   color: #fff;
   padding: 20px;
-  text-align: center;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.header-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.header-text h1,
+.header-text p {
+  margin: 0;
+  text-align: left;
+}
+
+.header-text p {
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .header-text h1 {
+    font-size: 1.3em;
+  }
 }
 
 nav {

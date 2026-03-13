@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8" />
   <title>Olist BigQuery Data Pipeline – Findings</title>
@@ -413,9 +414,9 @@
         ‹ Prev <span class="key">←</span>
       </button>
       <button id="next-btn">
-        <span class="key">→</span> Next ›
+        <span class="key">→ / ↓</span> Next ›
       </button>
-      <div class="hint">Use arrow keys or buttons to navigate</div>
+      <div class="hint">Use ← / → / ↑ / ↓ keys, mouse wheel, or buttons to navigate</div>
     </div>
   </footer>
 </div>
@@ -937,15 +938,49 @@
   }
 
   prevBtn.addEventListener("click", function() { go(-1); });
-  nextBtn.addEventListener("keydown", function(e) {
-    if (e.key === "ArrowRight") go(1);
-    else if (e.key === "ArrowLeft") go(-1);
-  });
+  nextBtn.addEventListener("click", function() { go(1); });
 
   document.addEventListener("keydown", function(e) {
-    if (e.key === "ArrowRight") go(1);
-    else if (e.key === "ArrowLeft") go(-1);
+    const k = e.key || "";
+    const code = e.code || "";
+    const keyCode = e.keyCode;
+
+    const nextKeys = (
+      k === "ArrowRight" || k === "Right" ||
+      k === "ArrowDown"  || k === "Down"  ||
+      code === "ArrowRight" || code === "ArrowDown" ||
+      keyCode === 39 || keyCode === 40
+    );
+
+    const prevKeys = (
+      k === "ArrowLeft" || k === "Left" ||
+      k === "ArrowUp"   || k === "Up"   ||
+      code === "ArrowLeft" || code === "ArrowUp" ||
+      keyCode === 37 || keyCode === 38
+    );
+
+    if (nextKeys) {
+      e.preventDefault();
+      go(1);
+    } else if (prevKeys) {
+      e.preventDefault();
+      go(-1);
+    }
   });
+
+  // Mouse wheel / touchpad scrolling to flip slides
+  let scrollLock = false;
+  document.addEventListener("wheel", function(e) {
+    if (scrollLock) return;
+    if (Math.abs(e.deltaY) < 5) return;
+    scrollLock = true;
+    if (e.deltaY > 0) {
+      go(1);
+    } else {
+      go(-1);
+    }
+    setTimeout(function() { scrollLock = false; }, 350);
+  }, { passive: true });
 
   renderSlide(current);
 </script>

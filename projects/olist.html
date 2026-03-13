@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Olist Project | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Danny Teo Yong Song</h1>
+    <p>Management Consultant | Software Engineer | Data Enthusiast | Tech Explorer</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>Olist E-Commerce Data Pipeline (BigQuery)</h1>
+      <p class="project-meta">Completed 2026</p>
+      <p class="project-summary">
+        An ELT pipeline that loads the Brazilian E-Commerce dataset (Olist) into Google BigQuery and builds a star schema using dbt-bigquery, with orchestration via Dagster and data quality checks.
+      </p>
+      <h2>Overview</h2>
+      <p>
+        The pipeline ingests Olist CSV data into BigQuery raw tables, then uses dbt to create staging views and a dimensional data warehouse (marts). It supports both direct local-to-BigQuery ingestion and an optional path via Google Cloud Storage. A Dagster job runs the full flow: <strong>ingest → dbt run → dbt test → data quality</strong>. Analysis is done in a Jupyter notebook using <code>pandas_gbq</code>.
+      </p>
+      <h2>Schema</h2>
+      <ul>
+        <li><strong>Raw:</strong> dataset <code>raw_olist</code> (customers, orders, order_items, products, sellers, etc.)</li>
+        <li><strong>Staging:</strong> dataset <code>dw_stg_olist</code> (views)</li>
+        <li><strong>Marts:</strong> dataset <code>dw_dw</code> (dim_customer, dim_product, dim_seller, dim_date, fact_order_items)</li>
+      </ul>
+      <h2>Tech &amp; Tools</h2>
+      <ul>
+        <li>Python 3.10+</li>
+        <li>Google Cloud (BigQuery, optional GCS)</li>
+        <li>dbt-core with dbt-bigquery</li>
+        <li>Dagster (orchestration)</li>
+        <li>Great Expectations (data quality)</li>
+        <li>Jupyter, pandas, pandas_gbq (analysis)</li>
+      </ul>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://github.com/teoyongsong/olist-data-pipeline_bigquery" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+</body>
+</html>

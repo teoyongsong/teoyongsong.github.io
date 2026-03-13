@@ -25,13 +25,20 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Activity Tracker</h3>
-      <p>A personal web app to log and visualize daily activities.</p>
-    </div>
-    <div class="project">
-      <h3>Customer Complaints Pipeline</h3>
-      <p>Kafka-based system to handle real-time customer feedback.</p>
+    <div class="project-grid">
+      <a href="projects/olist.html" class="project-card">
+        <h3>Olist E-Commerce Data Pipeline (BigQuery)</h3>
+        <p>ELT pipeline: Olist CSV → BigQuery raw → dbt star schema, with Dagster orchestration and data quality checks.</p>
+        <span class="project-link">View project &rarr;</span>
+      </a>
+      <div class="project-card project-card-placeholder">
+        <h3>Activity Tracker</h3>
+        <p>A personal web app to log and visualize daily activities.</p>
+      </div>
+      <div class="project-card project-card-placeholder">
+        <h3>Customer Complaints Pipeline</h3>
+        <p>Kafka-based system to handle real-time customer feedback.</p>
+      </div>
     </div>
   </section>
 

@@ -80,6 +80,40 @@ section {
   border-radius: 5px;
 }
 
+#data-lifecycle .lifecycle-step,
+#data-lifecycle .lifecycle-summary {
+  margin-top: 1.5em;
+}
+
+#data-lifecycle .lifecycle-step:first-of-type {
+  margin-top: 1em;
+}
+
+#data-lifecycle h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+  color: #333;
+}
+
+#data-lifecycle ul {
+  margin: 0.3em 0 0;
+  padding-left: 1.4em;
+}
+
+#data-lifecycle li {
+  margin-bottom: 0.35em;
+}
+
+#data-lifecycle .lifecycle-summary {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #e0e0e0;
+}
+
+#data-lifecycle .lifecycle-summary p {
+  margin: 0.4em 0 0;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

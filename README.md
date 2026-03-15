@@ -14,7 +14,7 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
   - This portfolio repo
   - Activity Tracker
   - Olist E-Commerce Data Pipeline (BigQuery)
-  - My Streamlit App (e.g. HDB resale prices)
+  - HDB Resale Prices (Streamlit)
   - Placeholders for more projects
 - **Contact** — WhatsApp, email, GitHub, LinkedIn.
 
@@ -36,7 +36,7 @@ teoyongsong.github.io/
     ├── activity-tracker.html
     ├── olist.html            # Olist BigQuery pipeline
     ├── olist_ppt.html        # Olist findings deck (slides)
-    └── my-streamlit-app.html # Streamlit app (e.g. HDB resale)
+    └── hdb-resale-prices.html # HDB Resale Prices (Streamlit)
 ```
 
 ---

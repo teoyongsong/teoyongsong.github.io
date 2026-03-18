@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SG Accounting | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>SG Accounting</h1>
+      <p class="project-meta">Full-stack application &mdash; 2026</p>
+      <p class="project-summary">
+        A simple accounting app for Singapore professional-services companies (no inventory), covering clients, invoicing, expenses, a dashboard, and business income reporting.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        This project is split into a React frontend and a Spring Boot backend, with MySQL as the persistence layer. It focuses on the workflows a small services company needs day-to-day:
+        managing clients, issuing invoices (with line and cost items), tracking expenses, and reviewing income via reports and dashboard summaries.
+      </p>
+
+      <h2>Key features</h2>
+      <ul>
+        <li><strong>Clients</strong>: CRUD for client records (contact and address details).</li>
+        <li><strong>Invoices</strong>: CRUD invoices, line items and cost items, and invoice print output driven by client selection.</li>
+        <li><strong>Expenses</strong>: CRUD expense tracking.</li>
+        <li><strong>Reports</strong>: Business income summary by year (YA year).</li>
+        <li><strong>Dashboard</strong>: High-level totals for invoices, costs, and expenses.</li>
+        <li><strong>Business profile</strong>: “From” details for invoices stored in a JSON file managed via API.</li>
+      </ul>
+
+      <h2>Tech &amp; tools</h2>
+      <ul>
+        <li><strong>Frontend</strong>: React + Vite + TypeScript + Ant Design</li>
+        <li><strong>Backend</strong>: Spring Boot + Maven</li>
+        <li><strong>Database</strong>: MySQL 8 (Docker)</li>
+      </ul>
+
+      <h2>Run locally (quick start)</h2>
+      <ul>
+        <li><strong>Start MySQL</strong>: <code>docker compose up -d</code> (from the Accounting repo root)</li>
+        <li><strong>Start backend</strong>: <code>cd backend &amp;&amp; mvn spring-boot:run</code> (runs on <code>http://localhost:8080</code>)</li>
+        <li><strong>Start frontend</strong>: <code>cd frontend &amp;&amp; npm install &amp;&amp; npm run dev</code> (runs on <code>http://localhost:5173</code>)</li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://youtu.be/lNUMx9IyVEc" target="_blank" rel="noopener">Demo video</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

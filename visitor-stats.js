@@ -1,25 +1,34 @@
 (function () {
   "use strict";
 
-  // Global accumulative counters (shared across visitors)
   var API_BASE = "https://api.counterapi.dev/v1";
   var NAMESPACE = "teoyongsong-github-io";
-  var VISITOR_COUNTER = "site-visitors";
-  var LIKE_COUNTER = "site-likes";
+  var OVERALL_VISITOR_COUNTER = "site-visitors";
+  var OVERALL_LIKE_COUNTER = "site-likes";
 
-  // Local flags to prevent duplicate events from the same device/session
-  var LIKE_FLAG = "liked-teoyongsong-site";
-  var VISIT_FLAG = "counted-teoyongsong-visit";
+  var PAGE_KEY = getPageKey();
+  var PAGE_VISITOR_COUNTER = "page-" + PAGE_KEY + "-visitors";
+  var PAGE_LIKE_COUNTER = "page-" + PAGE_KEY + "-likes";
+  var LIKE_FLAG = "liked-teoyongsong-site-" + PAGE_KEY;
+  var VISIT_FLAG = "counted-teoyongsong-visit-" + PAGE_KEY;
 
-  var visitorEl = document.getElementById("visitor-count");
-  var likeEl = document.getElementById("like-count");
+  var overallVisitorEl = document.getElementById("overall-visitor-count");
+  var overallLikeEl = document.getElementById("overall-like-count");
+  var pageVisitorEl = document.getElementById("page-visitor-count");
+  var pageLikeEl = document.getElementById("page-like-count");
   var likeBtn = document.getElementById("like-btn");
   var msgEl = document.getElementById("engagement-message");
 
-  if (!visitorEl || !likeEl || !likeBtn || !msgEl) return;
+  if (!overallVisitorEl || !overallLikeEl || !pageVisitorEl || !pageLikeEl || !likeBtn || !msgEl) return;
 
   function setMessage(text) {
     msgEl.textContent = text || "";
+  }
+
+  function getPageKey() {
+    var path = (window.location.pathname || "/").toLowerCase();
+    if (path === "/" || path === "/index.html") return "home";
+    return path.replace(/^\//, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
 
   function getUrl(name, action) {
@@ -28,7 +37,7 @@
   }
 
   function requestJSON(url) {
-    return fetch(url, { cache: "no-store" }).then(function (res) {
+    return fetch(url, { cache: "no-store", mode: "cors" }).then(function (res) {
       return res.json();
     });
   }
@@ -49,22 +58,38 @@
   }
 
   function refreshCounts() {
-    getCount(VISITOR_COUNTER)
+    getCount(OVERALL_VISITOR_COUNTER)
       .then(function (count) {
-        visitorEl.textContent = String(count);
+        overallVisitorEl.textContent = String(count);
       })
       .catch(function () {
-        visitorEl.textContent = "--";
-        setMessage("Unable to load visitor count right now.");
+        overallVisitorEl.textContent = "--";
+        setMessage("Unable to load overall visitor count right now.");
       });
 
-    getCount(LIKE_COUNTER)
+    getCount(OVERALL_LIKE_COUNTER)
       .then(function (count) {
-        likeEl.textContent = String(count);
+        overallLikeEl.textContent = String(count);
       })
       .catch(function () {
-        likeEl.textContent = "--";
-        if (!msgEl.textContent) setMessage("Unable to load like count right now.");
+        overallLikeEl.textContent = "--";
+      });
+
+    getCount(PAGE_VISITOR_COUNTER)
+      .then(function (count) {
+        pageVisitorEl.textContent = String(count);
+      })
+      .catch(function () {
+        pageVisitorEl.textContent = "--";
+      });
+
+    getCount(PAGE_LIKE_COUNTER)
+      .then(function (count) {
+        pageLikeEl.textContent = String(count);
+      })
+      .catch(function () {
+        pageLikeEl.textContent = "--";
+        if (!msgEl.textContent) setMessage("Unable to load page like count right now.");
       });
   }
 
@@ -74,14 +99,16 @@
       return;
     }
 
-    increment(VISITOR_COUNTER)
-      .then(function (count) {
-        visitorEl.textContent = String(count);
+    Promise.all([increment(OVERALL_VISITOR_COUNTER), increment(PAGE_VISITOR_COUNTER)])
+      .then(function (counts) {
+        overallVisitorEl.textContent = String(counts[0]);
+        pageVisitorEl.textContent = String(counts[1]);
         sessionStorage.setItem(VISIT_FLAG, "1");
-        return getCount(LIKE_COUNTER);
+        return Promise.all([getCount(OVERALL_LIKE_COUNTER), getCount(PAGE_LIKE_COUNTER)]);
       })
-      .then(function (count) {
-        likeEl.textContent = String(count);
+      .then(function (counts) {
+        overallLikeEl.textContent = String(counts[0]);
+        pageLikeEl.textContent = String(counts[1]);
       })
       .catch(function () {
         refreshCounts();
@@ -91,7 +118,7 @@
   if (localStorage.getItem(LIKE_FLAG) === "1") {
     likeBtn.disabled = true;
     likeBtn.textContent = "Liked";
-    setMessage("Thanks! You already liked this site on this device.");
+    setMessage("Thanks! You already liked this page on this device.");
   }
 
   likeBtn.addEventListener("click", function () {
@@ -100,9 +127,10 @@
     likeBtn.disabled = true;
     setMessage("Updating likes...");
 
-    increment(LIKE_COUNTER)
-      .then(function (count) {
-        likeEl.textContent = String(count);
+    Promise.all([increment(OVERALL_LIKE_COUNTER), increment(PAGE_LIKE_COUNTER)])
+      .then(function (counts) {
+        overallLikeEl.textContent = String(counts[0]);
+        pageLikeEl.textContent = String(counts[1]);
         localStorage.setItem(LIKE_FLAG, "1");
         likeBtn.textContent = "Liked";
         setMessage("Thanks for the like!");

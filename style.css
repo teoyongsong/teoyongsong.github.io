@@ -114,6 +114,53 @@ section {
   margin: 0.4em 0 0;
 }
 
+/* Live apps (homepage) */
+.live-apps-lead {
+  margin-top: 0;
+  color: #444;
+}
+
+.live-apps-list {
+  list-style: none;
+  margin: 1em 0 0;
+  padding: 0;
+}
+
+.live-apps-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.live-apps-list li:last-child {
+  border-bottom: none;
+}
+
+.live-apps-list strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.live-apps-links {
+  display: block;
+  font-size: 0.95em;
+  margin-top: 4px;
+}
+
+.live-apps-links a {
+  color: #1a5f9e;
+}
+
+.live-apps-links a:hover {
+  text-decoration: underline;
+}
+
+.live-apps-more {
+  margin: 1em 0 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
 .engagement-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

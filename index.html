@@ -22,6 +22,7 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#data-lifecycle">Data Lifecycle</a>
+    <a href="#subscribe">Subscribe</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -137,6 +138,28 @@
       <h3>✅ Summary</h3>
       <p>The journey is: <strong>Collect → Store → Clean → Analyze → Apply → Improve</strong>. Companies that do this well transform data from a passive asset into an active driver of growth, efficiency, and innovation.</p>
     </div>
+  </section>
+
+  <section id="subscribe">
+    <h2>Get notified of new projects</h2>
+    <p class="subscribe-lead">
+      Leave your email if you want a short note when a new project is added to this portfolio.
+      Your address is used only for that purpose and is not shown on the site.
+    </p>
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID: https://formspree.io/ -->
+    <form class="subscribe-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label class="sr-only" for="subscribe-email">Email</label>
+      <input id="subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+      <label class="sr-only" for="subscribe-name">Name (optional)</label>
+      <input id="subscribe-name" type="text" name="name" placeholder="Name (optional)" autocomplete="name">
+      <input type="hidden" name="_subject" value="New portfolio subscriber">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="subscribe-honeypot" aria-hidden="true">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">
+      After you submit, check your inbox to confirm (if you enable confirmation in Formspree).
+      Automated “new project” emails are sent from GitHub Actions using your own mail provider — see the repo README to finish setup.
+    </p>
   </section>
 
   <section id="contact">

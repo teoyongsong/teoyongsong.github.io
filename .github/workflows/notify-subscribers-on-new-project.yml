@@ -1,0 +1,58 @@
+# Emails your subscriber list when project pages or the projects section on the homepage change.
+# Configure secrets in the repo: RESEND_API_KEY, NOTIFY_FROM_EMAIL, SUBSCRIBER_EMAILS (see README).
+name: Notify subscribers (new project)
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "projects/**"
+      - "index.html"
+
+jobs:
+  notify:
+    if: ${{ secrets.RESEND_API_KEY != '' && secrets.SUBSCRIBER_EMAILS != '' && secrets.NOTIFY_FROM_EMAIL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email via Resend
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_FROM_EMAIL: ${{ secrets.NOTIFY_FROM_EMAIL }}
+          SUBSCRIBER_EMAILS: ${{ secrets.SUBSCRIBER_EMAILS }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          python3 << 'PY'
+          import json, os, urllib.request
+
+          key = os.environ["RESEND_API_KEY"]
+          from_addr = os.environ["NOTIFY_FROM_EMAIL"]
+          subs = [e.strip() for e in os.environ["SUBSCRIBER_EMAILS"].split(",") if e.strip()]
+          if not subs:
+              raise SystemExit("SUBSCRIBER_EMAILS is empty")
+
+          html = f"""<p>Hello,</p>
+          <p>A change was published on the portfolio (new or updated project content).</p>
+          <p><a href="https://teoyongsong.github.io/">https://teoyongsong.github.io/</a></p>
+          <p><small>Automated notification · commit {os.environ.get("COMMIT_SHA", "")[:7]}</small></p>"""
+
+          payload = {
+              "from": from_addr,
+              "to": [from_addr],
+              "bcc": subs,
+              "subject": "New project update — Danny Teo's portfolio",
+              "html": html,
+          }
+
+          data = json.dumps(payload).encode("utf-8")
+          req = urllib.request.Request(
+              "https://api.resend.com/emails",
+              data=data,
+              headers={
+                  "Authorization": f"Bearer {key}",
+                  "Content-Type": "application/json",
+              },
+              method="POST",
+          )
+          with urllib.request.urlopen(req, timeout=60) as resp:
+              print(resp.status, resp.read().decode("utf-8", errors="replace"))
+          PY

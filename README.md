@@ -17,8 +17,44 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
   - HDB Resale Prices (Streamlit)
   - Placeholders for more projects
 - **Contact** — WhatsApp, email, GitHub, LinkedIn.
+- **Subscribe** — Email signup for “new project” notifications (Formspree + optional automation below).
 
 Each featured project has its own page under `projects/` with overview, tech stack, and links (repos, live apps, slides).
+
+---
+
+## Project update emails (subscribers)
+
+Static GitHub Pages cannot send mail by itself. This repo uses two pieces:
+
+1. **Collect signups (private list)** — [Formspree](https://formspree.io/) form on the homepage posts to their servers; you receive submissions and manage/export addresses in your Formspree dashboard (not committed to git).
+2. **Notify everyone when you add a project** — A GitHub Action sends one email (BCC to all subscribers) via [Resend](https://resend.com/) when `projects/**` or `index.html` changes on `main`/`master`.
+
+### 1) Formspree (subscription form)
+
+1. Create a free account at [formspree.io](https://formspree.io/) and create a new form.
+2. Copy the form endpoint (looks like `https://formspree.io/f/abcdefgh`).
+3. In `index.html`, replace `YOUR_FORM_ID` in the subscribe form `action` with your real form path (the part after `/f/` is your id — use the full URL Formspree gives you).
+4. In Formspree, turn on **email confirmations** / spam protection as you prefer.
+
+Subscribers’ emails stay in **your Formspree account** (or forwarded to your inbox) — they are **not** stored in this public repository.
+
+### 2) Resend + GitHub Actions (auto email on new project)
+
+1. Sign up at [resend.com](https://resend.com/), verify a **sender domain** (or use their test sender while experimenting).
+2. Create an API key.
+3. In this GitHub repo: **Settings → Secrets and variables → Actions → New repository secret**:
+   - `RESEND_API_KEY` — your Resend API key  
+   - `NOTIFY_FROM_EMAIL` — must be an allowed sender, e.g. `Portfolio <updates@yourdomain.com>`  
+   - `SUBSCRIBER_EMAILS` — comma-separated list of subscriber addresses, e.g. `a@x.com,b@y.com`  
+     - **Privacy:** the workflow sends **BCC** so recipients do not see each other’s emails.  
+     - **Keeping the list updated:** when new people subscribe via Formspree, add their emails to this secret (or re-export from Formspree periodically and paste the full list).
+
+If any of these secrets are missing, the workflow is skipped and nothing breaks.
+
+### Workflow file
+
+- `.github/workflows/notify-subscribers-on-new-project.yml` — runs on push when `projects/**` or `index.html` changes.
 
 ---
 
@@ -47,7 +83,7 @@ teoyongsong.github.io/
 - **GitHub Pages** for hosting (no build step)
 - **Git** for version control
 
-No JavaScript frameworks or build tools; static HTML/CSS only.
+Includes small vanilla JavaScript for visitor/like stats (`visitor-stats.js`). No build step.
 
 ---
 

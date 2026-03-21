@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Safety Checker | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>Web Safety Checker (API-first)</h1>
+      <p class="project-meta">Security tooling project &mdash; Mar 2026</p>
+      <p class="project-summary">
+        An API-first web safety tool that checks URL safety, domain email hygiene, and host network posture, with optional combined analysis and downloadable PDF reports.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        The project exposes dedicated APIs for web checks, email checks, network checks, and an all-in-one endpoint that returns sectioned results.
+        The frontend calls the backend API directly, and users can generate a full PDF report after each assessment.
+      </p>
+
+      <h2>Main API endpoints</h2>
+      <ul>
+        <li><code>POST /check/web</code> — URL and link safety checks.</li>
+        <li><code>POST /check/email</code> — email hygiene checks (MX/SPF/DMARC).</li>
+        <li><code>POST /check/network</code> — host reachability and TLS posture checks.</li>
+        <li><code>POST /check/all</code> — combined web + email + network results.</li>
+        <li><code>POST /report/pdf</code> — downloadable full report with recommendations.</li>
+      </ul>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li>Supports Web/Email/Network modes from one interface.</li>
+        <li>API-first architecture for easier integration and automation.</li>
+        <li>PDF report export for sharing findings and recommendations.</li>
+        <li>Health endpoint for service monitoring.</li>
+      </ul>
+
+      <h2>Run locally</h2>
+      <ul>
+        <li>Start API server: <code>python3 backend_api.py</code></li>
+        <li>Backend listens on: <code>http://127.0.0.1:8787</code></li>
+        <li>Health check: <code>GET /health</code></li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://github.com/teoyongsong/web-safety" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>
+

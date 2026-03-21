@@ -28,44 +28,48 @@
   <main class="project-page">
     <article class="project-detail">
       <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
-      <h1>Web Safety Checker (API-first)</h1>
-      <p class="project-meta">Security tooling project &mdash; Mar 2026</p>
+      <h1>Web Safety Checker</h1>
+      <p class="project-meta">Security tooling project &mdash; updated Mar 2026</p>
       <p class="project-summary">
-        An API-first web safety tool that checks URL safety, domain email hygiene, and host network posture, with optional combined analysis and downloadable PDF reports.
+        A Python backend with a <strong>Streamlit</strong> UI and <strong>REST APIs</strong> for web, email, and network safety checks, combined analysis, and downloadable PDF reports — runnable locally or on the cloud.
       </p>
 
       <h2>Overview</h2>
       <p>
-        The project exposes dedicated APIs for web checks, email checks, network checks, and an all-in-one endpoint that returns sectioned results.
-        The frontend calls the backend API directly, and users can generate a full PDF report after each assessment.
+        The tool checks URLs and outbound links, domain email hygiene (MX, SPF, DMARC, DKIM, and more), and host reachability / TLS posture.
+        You can use the <strong>hosted Streamlit app</strong> without running a server yourself, or run the same checks via the API for automation and integrations.
       </p>
+
+      <h2>Major updates (since the earlier version)</h2>
+      <ul>
+        <li><strong>Streamlit UI</strong> — same checks as the API through a browser app; deployable on Streamlit Community Cloud.</li>
+        <li><strong>API-first modules</strong> — dedicated endpoints for web, email, network, combined <code>/check/all</code>, and <code>/report/pdf</code>.</li>
+        <li><strong>Deeper web checks</strong> — security headers, cookie flags, mixed content, third-party scripts vs SRI, DNSSEC/CAA, TLS/cipher/cert chain, OCSP (via OpenSSL when available), Certificate Transparency, HSTS preload, optional live threat intel (Safe Browsing / VirusTotal when API keys are set).</li>
+        <li><strong>Richer email checks</strong> — SPF/DMARC/DKIM (including optional DKIM discovery from sample headers or a source URL), MTA-STS, TLS-RPT, BIMI, and STARTTLS probe to primary MX where reachable.</li>
+        <li><strong>Network checks</strong> — DNS, port reachability, TLS expiry on 443, optional service banner on first open port.</li>
+        <li><strong>PDF reports</strong> — full downloadable report with recommendations after checks.</li>
+      </ul>
 
       <h2>Main API endpoints</h2>
       <ul>
-        <li><code>POST /check/web</code> — URL and link safety checks.</li>
-        <li><code>POST /check/email</code> — email hygiene checks (MX/SPF/DMARC).</li>
-        <li><code>POST /check/network</code> — host reachability and TLS posture checks.</li>
-        <li><code>POST /check/all</code> — combined web + email + network results.</li>
-        <li><code>POST /report/pdf</code> — downloadable full report with recommendations.</li>
-      </ul>
-
-      <h2>Highlights</h2>
-      <ul>
-        <li>Supports Web/Email/Network modes from one interface.</li>
-        <li>API-first architecture for easier integration and automation.</li>
-        <li>PDF report export for sharing findings and recommendations.</li>
-        <li>Health endpoint for service monitoring.</li>
+        <li><code>POST /check/web</code> — URL and link safety.</li>
+        <li><code>POST /check/email</code> — domain email hygiene.</li>
+        <li><code>POST /check/network</code> — host reachability and TLS posture.</li>
+        <li><code>POST /check/all</code> — combined web + email + network with section breakdown.</li>
+        <li><code>POST /report/pdf</code> — downloadable full PDF report.</li>
+        <li><code>GET /health</code> — health check.</li>
       </ul>
 
       <h2>Run locally</h2>
       <ul>
-        <li>Start API server: <code>python3 backend_api.py</code></li>
-        <li>Backend listens on: <code>http://127.0.0.1:8787</code></li>
-        <li>Health check: <code>GET /health</code></li>
+        <li><strong>API</strong>: <code>python3 backend_api.py</code> &rarr; <code>http://127.0.0.1:8787</code></li>
+        <li><strong>Streamlit</strong>: <code>pip install -r requirements.txt</code> then <code>streamlit run streamlit_app.py</code></li>
+        <li>Static <code>index.html</code> UI can call the API when the backend is running; set API base in page options if needed.</li>
       </ul>
 
       <h2>Links</h2>
       <ul>
+        <li><a href="https://web-safety.streamlit.app/" target="_blank" rel="noopener">Live app (Streamlit Cloud)</a></li>
         <li><a href="https://github.com/teoyongsong/web-safety" target="_blank" rel="noopener">GitHub repository</a></li>
       </ul>
     </article>
@@ -101,4 +105,3 @@
   <script src="../visitor-stats.js"></script>
 </body>
 </html>
-

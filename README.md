@@ -27,17 +27,17 @@ Each featured project has its own page under `projects/` with overview, tech sta
 
 Static GitHub Pages cannot send mail by itself. This repo uses two pieces:
 
-1. **Collect signups (private list)** — [Formspree](https://formspree.io/) form on the homepage posts to their servers; you receive submissions and manage/export addresses in your Formspree dashboard (not committed to git).
+1. **Collect signups** — The homepage form uses [FormSubmit](https://formsubmit.co/) and posts to **your** inbox (`teo_yongsong@yahoo.com.sg`). Subscribers are not stored in git. The **first** time someone submits, FormSubmit may ask you to **confirm/activate** that destination email on their site (one-time).
 2. **Notify everyone when you add a project** — A GitHub Action sends one email (BCC to all subscribers) via [Resend](https://resend.com/) when `projects/**` or `index.html` changes on `main`/`master`.
 
-### 1) Formspree (subscription form)
+### 1) FormSubmit (subscription form — current setup)
 
-1. Create a free account at [formspree.io](https://formspree.io/) and create a new form.
-2. Copy the form endpoint (looks like `https://formspree.io/f/abcdefgh`).
-3. In `index.html`, replace `YOUR_FORM_ID` in the subscribe form `action` with your real form path (the part after `/f/` is your id — use the full URL Formspree gives you).
-4. In Formspree, turn on **email confirmations** / spam protection as you prefer.
+- Form `action` is `https://formsubmit.co/teo_yongsong@yahoo.com.sg`.
+- To use a **different** inbox, change that email in `index.html` and complete FormSubmit’s activation for the new address.
 
-Subscribers’ emails stay in **your Formspree account** (or forwarded to your inbox) — they are **not** stored in this public repository.
+**If you see “Form not found”** — that was the old **Formspree** placeholder (`YOUR_FORM_ID`). The site now uses FormSubmit instead; deploy the latest `index.html` and try again.
+
+**Alternative:** You can switch to [Formspree](https://formspree.io/) by creating a form there and setting the form `action` to `https://formspree.io/f/<your-hash>`.
 
 ### 2) Resend + GitHub Actions (auto email on new project)
 

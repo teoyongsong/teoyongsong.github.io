@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CISSP Domain Quizzes | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#live-apps">Live apps</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>CISSP Domain Quizzes</h1>
+      <p class="project-meta">Security certification prep &mdash; Mar 2026</p>
+      <p class="project-summary">
+        Interactive <strong>CISSP</strong> practice: eight domains, question banks aligned with <strong>2024 domain weights</strong>, optional <strong>CAT-style timing</strong>, domain picks or a <strong>full practice exam</strong> — delivered as static HTML/CSS/JS, embedded in <strong>Streamlit</strong> for easy hosting.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        The quiz UI runs in the browser: choose a domain or an all-domains session, set run length, and practice with a timer scaled like the English CISSP CAT reference (e.g. ~3 hours for up to 150 items). The <a href="https://github.com/teoyongsong/cissp-quiz" target="_blank" rel="noopener">repository</a> ships a <code>streamlit_app.py</code> wrapper that inlines CSS and JavaScript into a single HTML document and displays it via <code>streamlit.components.html</code>, so you can deploy the same experience on <strong>Streamlit Community Cloud</strong> without a separate static host.
+      </p>
+
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Eight CISSP domains</strong> — practice per domain or combine banks.</li>
+        <li><strong>2024 weighting</strong> — question sets follow official domain weights.</li>
+        <li><strong>Full practice exam</strong> — large shuffled sample across domains.</li>
+        <li><strong>Timer</strong> — CAT-length timing scaled to your chosen number of questions.</li>
+        <li><strong>Explanations</strong> — review rationale as you go or after completion.</li>
+      </ul>
+
+      <h2>Tech &amp; layout</h2>
+      <ul>
+        <li>Frontend: HTML, CSS, JavaScript (<code>index.html</code>, <code>styles.css</code>, <code>js/questions.js</code>, <code>js/app.js</code>).</li>
+        <li>Streamlit: embeds the quiz in an iframe; keep the page to the embedded quiz only (extra Streamlit widgets can rerun and reset an in-progress session).</li>
+        <li>Alternative: the assets can be hosted as static files on GitHub Pages or similar without Streamlit.</li>
+      </ul>
+
+      <h2>Run locally</h2>
+      <ul>
+        <li><code>pip install -r requirements.txt</code></li>
+        <li><code>streamlit run streamlit_app.py</code></li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://cissp-quiz.streamlit.app/" target="_blank" rel="noopener">Live app (Streamlit Cloud)</a></li>
+        <li><a href="https://github.com/teoyongsong/cissp-quiz" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

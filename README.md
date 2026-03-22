@@ -11,11 +11,13 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
 - **About** — Short intro and how I can help (e.g. custom software, data management).
 - **Data Lifecycle** — A “from data to business impact” overview: collect → store → clean → analyze → apply → improve.
 - **Projects** — Grid of project cards (max 3 per row, responsive) with links to:
+  - CISSP Domain Quizzes (Streamlit)
+  - Web Safety Checker (Streamlit + API)
   - This portfolio repo
-  - Activity Tracker
+  - SG Accounting, Activity Tracker
   - Olist E-Commerce Data Pipeline (BigQuery)
   - HDB Resale Prices (Streamlit)
-  - Placeholders for more projects
+  - LMS and more
 - **Contact** — WhatsApp, email, GitHub, LinkedIn.
 - **Subscribe** — Email signup for “new project” notifications (Formspree + optional automation below).
 

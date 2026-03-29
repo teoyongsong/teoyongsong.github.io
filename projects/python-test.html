@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python &amp; ML practice quizzes | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>Python &amp; ML practice quizzes</h1>
+      <p class="project-meta">Personal project &mdash; <a href="https://github.com/teoyongsong/python-test" target="_blank" rel="noopener">python-test</a></p>
+      <p class="project-summary">
+        A browser-based quiz for Python and machine-learning practice. The UI is built with HTML and JavaScript; question data lives in <code>quiz-data.js</code>. A small Streamlit app (<code>app.py</code>) inlines the quiz into a single page and serves it on Streamlit Community Cloud so you can use it without cloning the repo.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        Each session draws <strong>ten random questions</strong> from a bank of <strong>thirty</strong>, across <strong>seven topics</strong>. You can run the quiz from the hosted Streamlit app or open <code>index.html</code> locally alongside <code>quiz-data.js</code>.
+      </p>
+
+      <h2>Tech &amp; Tools</h2>
+      <ul>
+        <li>HTML, JavaScript</li>
+        <li>Python, Streamlit (<code>streamlit.components</code> iframe embedding)</li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://python-tests.streamlit.app/" target="_blank" rel="noopener">Live app (Streamlit Community Cloud)</a></li>
+        <li><a href="https://github.com/teoyongsong/python-test" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+      <p>
+        Run locally: <code>streamlit run app.py</code> from the repository root, or open <code>index.html</code> in a browser with <code>quiz-data.js</code> in the same folder.
+      </p>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

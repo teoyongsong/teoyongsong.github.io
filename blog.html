@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Danny Teo's Portfolio</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#live-apps">Live apps</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#subscribe">Subscribe</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <section class="blog-index">
+    <h2>Blog</h2>
+    <p class="blog-index-lead">Notes on data, software, and how technology supports business.</p>
+    <ul class="blog-list">
+      <li class="blog-list-item">
+        <a href="blog/from-data-to-business-impact.html" class="blog-list-link">
+          <span class="blog-list-title">From Data to Business Impact</span>
+          <span class="blog-list-meta"><time datetime="2026-03-01">March 2026</time> · Data strategy</span>
+          <span class="blog-list-excerpt">A seven-step view of the data lifecycle—from collection and storage to analytics, AI, and continuous improvement.</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="visitor-stats.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Data to Business Impact | Blog | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#live-apps">Live apps</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#subscribe">Subscribe</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="blog-page">
+    <article class="blog-post">
+      <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+      <header class="blog-post-header">
+        <h1>From Data to Business Impact</h1>
+        <p class="blog-post-meta"><time datetime="2026-03-01">March 2026</time> · Data strategy</p>
+      </header>
+      <p class="blog-post-lede">
+        A typical company that wants to <strong>manage its data and use it to boost business</strong> usually follows a structured lifecycle: moving from <em>raw data</em> to <em>business impact</em>. Here’s how it usually unfolds.
+      </p>
+      <div class="blog-post-body">
+        <div class="lifecycle-step">
+          <h2>1. 📥 Data Collection</h2>
+          <ul>
+            <li><strong>Sources</strong>: Customer interactions, sales transactions, website/app analytics, IoT sensors, social media, and third‑party datasets.</li>
+            <li><strong>Goal</strong>: Gather comprehensive, relevant data that reflects both operations and customer behavior.</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-step">
+          <h2>2. 🗄️ Data Storage &amp; Management</h2>
+          <ul>
+            <li><strong>Databases</strong>: Relational (MySQL, PostgreSQL) or NoSQL (MongoDB).</li>
+            <li><strong>Data Lakes/Warehouses</strong>: Centralized repositories like Snowflake, BigQuery, or AWS Redshift.</li>
+            <li><strong>Governance</strong>: Policies for data quality, privacy, and compliance (GDPR, PDPA in Singapore).</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-step">
+          <h2>3. 🔍 Data Cleaning &amp; Preparation</h2>
+          <ul>
+            <li><strong>Processes</strong>: Remove duplicates, handle missing values, normalize formats.</li>
+            <li><strong>Tools</strong>: ETL pipelines (Extract, Transform, Load) using Airflow, dbt, or Talend.</li>
+            <li><strong>Goal</strong>: Ensure data is reliable and consistent before analysis.</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-step">
+          <h2>4. 📊 Data Analysis &amp; Visualization</h2>
+          <ul>
+            <li><strong>Techniques</strong>: Descriptive analytics (what happened), diagnostic (why it happened), predictive (what will happen), prescriptive (what should we do).</li>
+            <li><strong>Tools</strong>: Python (Pandas, scikit‑learn), R, Tableau, Power BI, or Streamlit dashboards.</li>
+            <li><strong>Goal</strong>: Turn raw data into insights that decision‑makers can understand.</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-step">
+          <h2>5. 🤖 Advanced Analytics &amp; AI</h2>
+          <ul>
+            <li><strong>Machine Learning</strong>: Forecast demand, recommend products, detect fraud.</li>
+            <li><strong>AI Models</strong>: NLP for customer feedback, computer vision for quality control.</li>
+            <li><strong>Goal</strong>: Move beyond reporting into proactive, automated decision support.</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-step">
+          <h2>6. 🚀 Business Application</h2>
+          <ul>
+            <li><strong>Marketing</strong>: Personalized campaigns based on customer segments.</li>
+            <li><strong>Operations</strong>: Optimize supply chain, inventory, staffing.</li>
+            <li><strong>Product Development</strong>: Identify features customers want most.</li>
+            <li><strong>Finance</strong>: Predict cash flow, detect anomalies.</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-step">
+          <h2>7. 🔄 Continuous Improvement</h2>
+          <ul>
+            <li><strong>Feedback loops</strong>: Use business outcomes to refine models and strategies.</li>
+            <li><strong>Data culture</strong>: Encourage teams to make decisions backed by data.</li>
+            <li><strong>Scalability</strong>: Expand infrastructure as data volume grows.</li>
+          </ul>
+        </div>
+
+        <div class="lifecycle-summary">
+          <h2>✅ Summary</h2>
+          <p>The journey is: <strong>Collect → Store → Clean → Analyze → Apply → Improve</strong>. Companies that do this well transform data from a passive asset into an active driver of growth, efficiency, and innovation.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

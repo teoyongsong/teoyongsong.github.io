@@ -73,9 +73,11 @@ nav a:hover {
 }
 
 section {
-  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: min(800px, calc(100% - 32px));
+  padding: 20px clamp(16px, 4vw, 24px);
   margin: 20px auto;
-  max-width: 800px;
   background: #fff;
   border-radius: 5px;
 }
@@ -142,11 +144,13 @@ section {
   line-height: 1.5;
 }
 
-/* Blog post layout */
+/* Blog post layout — width cap includes side gutters so content isn’t flush to the viewport edge */
 main.blog-page {
-  padding: 28px 24px;
-  margin: 20px auto;
-  max-width: 800px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: min(800px, calc(100% - 32px));
+  padding: 32px clamp(20px, 5vw, 40px);
+  margin: 24px auto 28px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -457,8 +461,16 @@ main.blog-page {
 
 @media (max-width: 600px) {
   section {
-    margin: 12px;
-    padding: 16px;
+    max-width: min(800px, calc(100% - 24px));
+    margin: 12px auto;
+    padding: 16px clamp(14px, 5vw, 20px);
+  }
+
+  main.blog-page,
+  main.project-page {
+    max-width: min(800px, calc(100% - 24px));
+    padding: 24px clamp(16px, 6vw, 24px);
+    margin: 16px auto 20px;
   }
 
   .engagement-grid {
@@ -472,9 +484,11 @@ main.blog-page {
 
 /* Project detail page */
 main.project-page {
-  padding: 28px 24px;
-  margin: 20px auto;
-  max-width: 800px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: min(800px, calc(100% - 32px));
+  padding: 32px clamp(20px, 5vw, 40px);
+  margin: 24px auto 28px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);

@@ -10,13 +10,14 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
 
 - **About** — Short intro and how you can get in touch for custom software or data management help.
 - **Live apps** — Streamlit (and similar) apps you can open in the browser, with links to detail pages:
+  - Online Retail Customer Segmentation · [teoyongsong.github.io/unsupervised-clustering-online-retail](https://teoyongsong.github.io/unsupervised-clustering-online-retail/)
   - HDB resale price predictor · [hdb-prices-predictor.streamlit.app](https://hdb-prices-predictor.streamlit.app/)
   - Python & ML practice quizzes · [python-tests.streamlit.app](https://python-tests.streamlit.app/)
   - Quantum Dice · [quqntumdice.streamlit.app](https://quqntumdice.streamlit.app/)
   - CISSP Domain Quizzes · [cissp-quiz.streamlit.app](https://cissp-quiz.streamlit.app/)
   - Web Safety Checker · [web-safety.streamlit.app](https://web-safety.streamlit.app/)
   - HDB Resale Prices · [hdb-resale-prices.streamlit.app](https://hdb-resale-prices.streamlit.app/)
-- **Projects** — Responsive grid of project cards (up to three per row on desktop), each linking to a page under `projects/` with overview, tech, and links (repos, live apps, slides where relevant). Includes HDB resale price predictor (ML), Python & ML quizzes, Quantum Dice, CISSP quizzes, Web Safety, this portfolio, SG Accounting, HDB Resale Prices (exploration app), Activity Tracker, Olist pipeline, LMS, and more.
+- **Projects** — Responsive grid of project cards (up to three per row on desktop), each linking to a page under `projects/` with overview, tech, and links (repos, live apps, slides where relevant). Includes Online Retail Customer Segmentation (unsupervised learning), HDB resale price predictor (ML), Python & ML quizzes, Quantum Dice, CISSP quizzes, Web Safety, this portfolio, SG Accounting, HDB Resale Prices (exploration app), Activity Tracker, Olist pipeline, LMS, and more.
 - **Blog** — [blog.html](https://teoyongsong.github.io/blog.html) lists posts; the first article is *From Data to Business Impact* (data lifecycle: collect → store → clean → analyze → apply → improve). New posts can be started from `blog/post-template.html`.
 - **Subscribe** — Email signup for “new project” notifications ([FormSubmit](https://formsubmit.co/); see below).
 - **Contact** — WhatsApp, email, GitHub, LinkedIn.
@@ -72,6 +73,7 @@ teoyongsong.github.io/
 │   └── from-data-to-business-impact.html
 └── projects/
     ├── portfolio.html
+    ├── customer-segmentation.html
     ├── hdb-price-predictor.html
     ├── python-test.html
     ├── quqntum-dice.html

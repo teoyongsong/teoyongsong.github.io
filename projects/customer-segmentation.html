@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Retail Customer Segmentation | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>Online Retail Customer Segmentation</h1>
+      <p class="project-meta">Personal project &mdash; <a href="https://teoyongsong.github.io/unsupervised-clustering-online-retail/" target="_blank" rel="noopener">unsupervised-clustering-online-retail</a></p>
+      <p class="project-summary">
+        RFM-based customer segmentation on online retail transactions using unsupervised learning. The project benchmarks KMeans and GMM, then translates clusters into business-friendly segments and retention actions.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        The report processes <strong>525,461</strong> raw rows into <strong>407,664</strong> clean rows and segments <strong>4,312</strong> customers into <strong>3 clusters</strong>. KMeans (k=3) is selected as the baseline with a silhouette score of <strong>0.4117</strong>. Segment outcomes include Champions, Potential Loyalists, and At-Risk groups, each with targeted CRM recommendations.
+      </p>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li>RFM feature engineering with log-stabilized Frequency and Monetary values.</li>
+        <li>Model comparison: KMeans baseline and GMM secondary benchmark.</li>
+        <li>Business outputs: segment sizes, revenue profile, and activation/win-back actions.</li>
+        <li>Visuals: customer counts by segment, average revenue by segment, PCA projection.</li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://teoyongsong.github.io/unsupervised-clustering-online-retail/" target="_blank" rel="noopener">Project landing page</a></li>
+        <li><a href="https://teoyongsong.github.io/unsupervised-clustering-online-retail/report.html" target="_blank" rel="noopener">Full report</a></li>
+      </ul>
+      <p>
+        The report includes notebook and export references (for example, <code>notebooks/01_customer_segmentation_starter.ipynb</code> and <code>data/processed/customer_segments.csv</code>) to support downstream dashboards and campaign execution.
+      </p>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

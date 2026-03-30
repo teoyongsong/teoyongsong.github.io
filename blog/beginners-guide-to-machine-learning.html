@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Beginner&rsquo;s Guide to Machine Learning | Blog | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#live-apps">Live apps</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#subscribe">Subscribe</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="blog-page">
+    <article class="blog-post">
+      <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+      <header class="blog-post-header">
+        <h1>A Beginner&rsquo;s Guide to Machine Learning</h1>
+        <p class="blog-post-meta"><time datetime="2026-03-31">March 2026</time> · Machine learning</p>
+      </header>
+      <p class="blog-post-lede">
+        Machine learning (ML) has become one of the most transformative technologies of our time. From powering recommendation engines on Netflix to detecting fraud in banking, ML is reshaping industries and everyday life. But what exactly is it?
+      </p>
+      <div class="blog-post-body">
+        <h2>🤖 What is Machine Learning?</h2>
+        <p>
+          At its core, machine learning is a branch of artificial intelligence (AI) that enables computers to <strong>learn from data</strong> rather than being explicitly programmed. Instead of hard-coding rules, we feed algorithms with examples, and they discover patterns to make predictions or decisions.
+        </p>
+
+        <h2>📊 Key Types of Machine Learning</h2>
+
+        <h3>Supervised learning</h3>
+        <p>Learns from <strong>labeled</strong> data—for example, predicting house prices from past sales.</p>
+        <ul>
+          <li>Common algorithms: linear regression, decision trees, neural networks.</li>
+        </ul>
+
+        <h3>Unsupervised learning</h3>
+        <p>Works with <strong>unlabeled</strong> data to find hidden structures—for example, customer segmentation.</p>
+        <ul>
+          <li>Common algorithms: k-means clustering, PCA.</li>
+        </ul>
+
+        <h3>Reinforcement learning</h3>
+        <p>Learns by trial and error, receiving rewards or penalties—for example, training robots or game AI.</p>
+        <ul>
+          <li>Famous example: AlphaGo beating human champions in Go.</li>
+        </ul>
+
+        <h2>⚙️ How Machine Learning Works</h2>
+        <ol>
+          <li><strong>Data collection</strong> — Gather raw data (images, text, numbers).</li>
+          <li><strong>Data preparation</strong> — Clean and format it for training.</li>
+          <li><strong>Model training</strong> — Feed data into algorithms to learn patterns.</li>
+          <li><strong>Evaluation</strong> — Test accuracy on unseen data.</li>
+          <li><strong>Deployment</strong> — Use the trained model in real-world applications.</li>
+        </ol>
+
+        <h2>🌍 Applications of Machine Learning</h2>
+        <ul>
+          <li><strong>Healthcare:</strong> Diagnosing diseases from medical images.</li>
+          <li><strong>Finance:</strong> Fraud detection and algorithmic trading.</li>
+          <li><strong>Retail:</strong> Personalized recommendations.</li>
+          <li><strong>Transportation:</strong> Self-driving cars.</li>
+          <li><strong>Natural language processing:</strong> Chatbots, translation, sentiment analysis.</li>
+        </ul>
+
+        <h2>⚖️ Challenges in Machine Learning</h2>
+        <ul>
+          <li><strong>Data quality:</strong> Garbage in, garbage out.</li>
+          <li><strong>Bias &amp; fairness:</strong> Models can inherit biases from training data.</li>
+          <li><strong>Interpretability:</strong> Complex models (such as deep neural networks) are often &ldquo;black boxes.&rdquo;</li>
+          <li><strong>Scalability:</strong> Training large models requires significant computing power.</li>
+        </ul>
+
+        <h2>🚀 The Future of Machine Learning</h2>
+        <p>
+          As computing power grows and data becomes more abundant, ML will continue to evolve. Emerging areas like explainable AI, federated learning, and ethical AI aim to make ML more transparent, secure, and fair. The next decade will likely see ML embedded in nearly every aspect of our digital lives.
+        </p>
+
+        <div class="lifecycle-summary">
+          <h2>✅ Takeaway</h2>
+          <p>
+            Machine learning is not magic—it is about <strong>teaching machines to learn from data</strong>. Whether you are a student, entrepreneur, or tech enthusiast, understanding ML is becoming as essential as knowing how to use a computer.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

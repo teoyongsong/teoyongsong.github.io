@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HDB resale price predictor | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>HDB resale price predictor</h1>
+      <p class="project-meta">Personal project &mdash; <a href="https://github.com/teoyongsong/hdb-price-predictor" target="_blank" rel="noopener">hdb-price-predictor</a></p>
+      <p class="project-summary">
+        Supervised learning on Singapore HDB resale transactions from <a href="https://data.gov.sg/" target="_blank" rel="noopener">data.gov.sg</a> (resale flat prices from Jan&nbsp;2017 onwards). The pipeline trains and compares several regressors; the trained bundle powers a Streamlit app and a Flask HTML form for indicative price estimates from town, flat type, model, storey range, floor area, lease, and valuation year.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        Data is fetched from the official dataset, preprocessed (scaling, one-hot encoding), and augmented with features such as remaining lease and flat age. Models include linear regression, Random Forest, XGBoost, and LightGBM, with metrics like RMSE, MAE, and R², plus plots and SHAP-style explanations in the offline pipeline. The hosted Streamlit app uses the exported model bundle—the same inputs as the local Flask UI.
+      </p>
+
+      <h2>Tech &amp; Tools</h2>
+      <ul>
+        <li>Python, Pandas</li>
+        <li>scikit-learn, XGBoost, LightGBM</li>
+        <li>Streamlit; Flask for the optional local HTML form</li>
+        <li>Pipeline and bundle export under <code>hdb_ml/</code></li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://hdb-prices-predictor.streamlit.app/" target="_blank" rel="noopener">Live app (Streamlit Community Cloud)</a></li>
+        <li><a href="https://github.com/teoyongsong/hdb-price-predictor" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+      <p>
+        Predictions are <strong>indicative only</strong>; markets drift and the README discusses retraining, time-based splits, and ethical use. See the <a href="https://github.com/teoyongsong/hdb-price-predictor" target="_blank" rel="noopener">repo</a> for fetching data from data.gov.sg, running <code>run_pipeline.py</code>, and exporting <code>models/model_bundle.joblib</code> for Streamlit (Community Cloud expects the bundle committed under <code>models/</code>).
+      </p>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

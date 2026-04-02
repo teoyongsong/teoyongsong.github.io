@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CNN waste classification | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>CNN waste classification</h1>
+      <p class="project-meta">Personal project &mdash; <a href="https://github.com/teoyongsong/cnn-waste" target="_blank" rel="noopener">cnn-waste</a></p>
+      <p class="project-summary">
+        A convolutional neural network project for classifying waste images. Training and experiments live in a Jupyter notebook; the best weights, class labels, and a small Streamlit app let you run inference in the browser on Streamlit Community Cloud.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        The repository includes a trained model checkpoint (<code>best_waste_model.pth</code>), <code>class_names.json</code>, loader utilities, and <code>streamlit_app.py</code> for uploading an image and viewing predictions. A companion notebook (<code>cnn_experiments.ipynb</code>) documents the modeling workflow.
+      </p>
+
+      <h2>Tech &amp; Tools</h2>
+      <ul>
+        <li>Python, PyTorch</li>
+        <li>CNN image classification</li>
+        <li>Streamlit (<code>requirements-streamlit.txt</code> for cloud deploy)</li>
+        <li>Jupyter for experiments</li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://cnn-waste.streamlit.app/" target="_blank" rel="noopener">Live app (Streamlit Community Cloud)</a></li>
+        <li><a href="https://github.com/teoyongsong/cnn-waste" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+      <p>
+        See the repo’s <code>STREAMLIT.md</code> and <code>verify_streamlit_ready.py</code> for deployment checks. Treat predictions as demonstrations; real waste-sorting systems need validation for your environment and regulations.
+      </p>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 teoyongsong.github.io. All rights reserved.</p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

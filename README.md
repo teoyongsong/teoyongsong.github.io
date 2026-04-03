@@ -8,7 +8,7 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
 
 ## What’s on the site
 
-- **About** — Short intro and how you can get in touch for custom software or data management help.
+- **About** — Short intro and how you can get in touch for custom software or data management help. The homepage and footer also link to **[dannyteo.github.io](https://dannyteo.github.io/)** for speaking, training, and consulting (companion professional site).
 - **Live apps** — Streamlit (and similar) apps you can open in the browser, with links to detail pages:
   - CNN waste classification · [cnn-waste.streamlit.app](https://cnn-waste.streamlit.app/)
   - Online Retail Customer Segmentation · [teoyongsong.github.io/unsupervised-clustering-online-retail](https://teoyongsong.github.io/unsupervised-clustering-online-retail/)

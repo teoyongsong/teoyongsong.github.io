@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAG Studio (Private-by-Default) | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="project-page">
+    <article class="project-detail">
+      <a href="../index.html#projects" class="back-link">&larr; Back to Projects</a>
+      <h1>RAG Studio (Private-by-Default)</h1>
+      <p class="project-meta">Personal project &mdash; <a href="https://github.com/teoyongsong/RAG" target="_blank" rel="noopener">RAG</a></p>
+      <p class="project-summary">
+        A local-first Retrieval-Augmented Generation (RAG) application with three interfaces: CLI queries, FastAPI web UI, and Streamlit UI. Designed for private document question-answering by default, with optional OpenAI generation in cloud deployments.
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        The app ingests documents from <code>resources/documents/</code>, builds embeddings with SentenceTransformers, and stores vectors in ChromaDB for retrieval. Responses can be generated with a local Llama GGUF model via <code>llama-cpp-python</code> or OpenAI. The Streamlit cloud mode supports safe public demos via environment toggles such as <code>PUBLIC_DEMO_MODE</code> and <code>AUTO_BOOTSTRAP_DEMO</code>.
+      </p>
+
+      <h2>Tech &amp; Tools</h2>
+      <ul>
+        <li>Python</li>
+        <li>ChromaDB, SentenceTransformers</li>
+        <li>llama-cpp-python (local GGUF) or OpenAI backend</li>
+        <li>Streamlit + FastAPI + CLI tooling</li>
+      </ul>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://rag-model.streamlit.app/" target="_blank" rel="noopener">Live app (Streamlit Community Cloud)</a></li>
+        <li><a href="https://github.com/teoyongsong/RAG" target="_blank" rel="noopener">GitHub repository</a></li>
+      </ul>
+      <p>
+        For local setup, use <code>requirements_local.txt</code>, run <code>python ingest.py</code>, then launch <code>streamlit run streamlit_app.py</code> or <code>python web_app.py</code>. Review privacy notes in the README to keep private documents and generated indexes out of git.
+      </p>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2019 teoyongsong.github.io. All rights reserved.</p>
+    <p class="footer-cross-link">Consulting &amp; professional profile: <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a></p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

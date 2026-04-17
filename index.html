@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danny Teo's portfolio of practical AI, data, and software projects with live demos, technical write-ups, and contact links.">
+  <meta name="keywords" content="Danny Teo, AI portfolio, machine learning, data projects, Streamlit apps, software developer">
   <title>Danny Teo's Portfolio</title>
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
@@ -20,6 +22,7 @@
 
   <nav>
     <a href="#about">About</a>
+    <a href="#featured-projects">Featured</a>
     <a href="#live-apps">Live apps</a>
     <a href="#projects">Projects</a>
     <a href="blog.html">Blog</a>
@@ -27,10 +30,67 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <p class="hero-kicker">AI • Data • Software</p>
+      <h2>Building practical apps and sharing what works.</h2>
+      <p class="hero-lead">I design hands-on AI/data prototypes, convert them into usable tools, and share implementation insights through project pages and blog posts.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#featured-projects">View featured projects</a>
+        <a class="btn btn-secondary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Speaking, training & consulting</a>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Danny Teo, a management consultant passionate about Information Technology. I am sharing my software development projects here. Feel free to connect with me. I might be able to assist if you need to develop customized software applications or organize your data management system for your organization.</p>
+    <p>Hello! I’m Danny Teo — a management consultant and builder who works at the intersection of software, data, and capability development. I started with business transformation work, then expanded into building practical tools in AI/ML, security, and analytics so teams can move from ideas to implementation faster.</p>
+    <p>This site is my technical portfolio: live demos, project breakdowns, and implementation notes. You will find small MVPs, applied machine-learning prototypes, and workflow-focused tools that solve real use cases.</p>
     <p class="about-professional-site">For <strong>speaking, training, consulting</strong>, and a fuller professional profile, visit <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a>.</p>
+  </section>
+
+  <section id="featured-projects">
+    <h2>Featured Projects</h2>
+    <p class="section-lead">A quick start if you are visiting for the first time.</p>
+    <div class="featured-grid">
+      <a href="projects/rag-studio.html" class="project-card featured-card">
+        <span class="project-tag">RAG / LLM</span>
+        <h3>RAG Studio (Private-by-Default)</h3>
+        <p>Local-first retrieval-augmented generation app with Streamlit, FastAPI, and CLI interfaces.</p>
+        <span class="project-link">View project &rarr;</span>
+      </a>
+      <a href="projects/hdb-price-predictor.html" class="project-card featured-card">
+        <span class="project-tag">ML / Tabular Data</span>
+        <h3>HDB resale price predictor</h3>
+        <p>Supervised-learning workflow from public HDB data to model bundle deployment in Streamlit.</p>
+        <span class="project-link">View project &rarr;</span>
+      </a>
+      <a href="projects/cnn-waste.html" class="project-card featured-card">
+        <span class="project-tag">Computer Vision</span>
+        <h3>CNN waste classification</h3>
+        <p>PyTorch image-classification project with deployable Streamlit inference for demo use.</p>
+        <span class="project-link">View project &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="highlights" class="highlights">
+    <h2>Professional Highlights</h2>
+    <ul class="highlights-list">
+      <li><strong>Consultant + builder</strong> — combines transformation advisory with working software prototypes.</li>
+      <li><strong>Community orientation</strong> — shares practical project write-ups, demo apps, and learning resources.</li>
+      <li><strong>Leadership & training</strong> — active in speaking, coaching, and capability-building initiatives.</li>
+    </ul>
+  </section>
+
+  <section id="latest-insights">
+    <h2>Latest Insights</h2>
+    <ul class="latest-insights-list">
+      <li><a href="blog/how-i-built-my-personal-website-with-github-pages.html">How I Built My Personal Website with GitHub Pages (and How You Can Too)</a> <span>· step-by-step setup guide</span></li>
+      <li><a href="blog/beginners-guide-to-machine-learning.html">A Beginner’s Guide to Machine Learning</a> <span>· fundamentals and practical context</span></li>
+      <li><a href="blog/from-data-to-business-impact.html">From Data to Business Impact</a> <span>· a seven-step data lifecycle view</span></li>
+      <li><a href="blog.html">View all blog posts</a></li>
+    </ul>
   </section>
 
   <section id="live-apps">

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How I Built My Personal Website with GitHub Pages | Blog | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#live-apps">Live apps</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#subscribe">Subscribe</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="blog-page">
+    <article class="blog-post">
+      <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+      <header class="blog-post-header">
+        <h1>How I Built My Personal Website with GitHub Pages (and How You Can Too)</h1>
+        <p class="blog-post-meta"><time datetime="2026-04-17">April 2026</time> · Website building</p>
+      </header>
+      <p class="blog-post-lede">
+        For years, I relied on LinkedIn as my main professional profile. But I wanted a space I could fully control: a simple personal website where I could showcase projects, experiments, and ideas. GitHub Pages turned out to be the easiest way to get started.
+      </p>
+      <div class="blog-post-body">
+        <p>
+          In this post, I walk through the same approach I used for <a href="https://teoyongsong.github.io/" target="_blank" rel="noopener">teoyongsong.github.io</a>. If you have been thinking about sharing your work online, this is a lightweight and free path.
+        </p>
+
+        <h2>Step 1: Create Your GitHub Pages Repository</h2>
+        <ul>
+          <li>Log in to GitHub and create a repository named <code>yourusername.github.io</code>.</li>
+          <li>Make it public so others can access the site.</li>
+          <li>You can initialize with a README, but the key file is <code>index.html</code>.</li>
+        </ul>
+
+        <h2>Step 2: Draft Your HTML Page</h2>
+        <p>
+          Your site can start as a digital business card. Mirror your professional basics: headline, about, experience, projects, and contact details.
+        </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Your Name&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Your Name&lt;/h1&gt;
+  &lt;h2&gt;Job Title | Industry&lt;/h2&gt;
+  &lt;p&gt;Short professional tagline (from LinkedIn headline)&lt;/p&gt;
+
+  &lt;h3&gt;About&lt;/h3&gt;
+  &lt;p&gt;Paste your LinkedIn “About” summary here.&lt;/p&gt;
+
+  &lt;h3&gt;Experience&lt;/h3&gt;
+  &lt;p&gt;Company – Role – Duration&lt;/p&gt;
+
+  &lt;h3&gt;Projects&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Project 1&lt;/li&gt;
+    &lt;li&gt;Project 2&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3&gt;Contact&lt;/h3&gt;
+  &lt;p&gt;Email: yourname@example.com&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h2>Step 3: Add Some Style</h2>
+        <p>
+          Add a <code>style.css</code> file to improve readability and visual structure.
+        </p>
+<pre><code>body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  text-align: center;
+}</code></pre>
+        <p>
+          Then link it in your HTML head:
+        </p>
+<pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+
+        <h2>Step 4: Deploy with GitHub Pages</h2>
+        <ul>
+          <li>Push your files (<code>index.html</code>, <code>style.css</code>, images) to the <code>main</code> branch.</li>
+          <li>Go to your repository: <strong>Settings → Pages</strong>.</li>
+          <li>Under Source, select <code>main</code> branch and save.</li>
+          <li>Your site goes live at <code>https://yourusername.github.io</code>.</li>
+        </ul>
+
+        <h2>Step 5: Share Your Work</h2>
+        <p>
+          Once the site is live, use it as a portfolio, project showcase, or blog. Mine is at <a href="https://teoyongsong.github.io/" target="_blank" rel="noopener">teoyongsong.github.io</a>. It is not perfect, but it is a start, and that is the point.
+        </p>
+        <p>
+          If you have built something, even a small one, share it. Sometimes the most valuable thing is not polish, but the courage to publish your work.
+        </p>
+
+        <div class="lifecycle-summary">
+          <h2>Closing Thought</h2>
+          <p>
+            A GitHub Pages site is more than a webpage. It is a statement that your ideas deserve a home. Start simple, keep it practical, and let your projects speak for themselves.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2019 teoyongsong.github.io. All rights reserved.</p>
+    <p class="footer-cross-link">Consulting &amp; professional profile: <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a></p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>

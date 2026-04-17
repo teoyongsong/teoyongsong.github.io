@@ -528,6 +528,7 @@ main.blog-page {
   border-radius: 8px;
   background: #fff;
   padding: 6px;
+  cursor: pointer;
 }
 
 .contact-qr-center {

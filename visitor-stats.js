@@ -19,6 +19,33 @@
   var likeBtn = document.getElementById("like-btn");
   var msgEl = document.getElementById("engagement-message");
 
+  function initContactQrTap() {
+    var qrImages = document.querySelectorAll(".contact-qr img");
+    if (!qrImages.length) return;
+
+    var vcfUrl = new URL("/assets/danny-teo-contact.vcf", window.location.origin).toString();
+
+    qrImages.forEach(function (img) {
+      img.style.cursor = "pointer";
+      img.setAttribute("role", "button");
+      img.setAttribute("tabindex", "0");
+      img.setAttribute("aria-label", "Tap to save contact details");
+
+      img.addEventListener("click", function () {
+        window.location.href = vcfUrl;
+      });
+
+      img.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          window.location.href = vcfUrl;
+        }
+      });
+    });
+  }
+
+  initContactQrTap();
+
   if (!overallVisitorEl || !overallLikeEl || !pageVisitorEl || !pageLikeEl || !likeBtn || !msgEl) return;
 
   function setMessage(text) {

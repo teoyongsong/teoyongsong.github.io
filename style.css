@@ -507,6 +507,29 @@ main.blog-page {
   color: #666;
 }
 
+.contact-qr {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #e7e7e7;
+  display: inline-block;
+}
+
+.contact-qr-label {
+  margin: 0 0 8px;
+  font-size: 0.92em;
+  color: #555;
+  font-weight: 600;
+}
+
+.contact-qr img {
+  width: 180px;
+  height: 180px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

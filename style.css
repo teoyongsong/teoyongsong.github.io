@@ -530,6 +530,12 @@ main.blog-page {
   padding: 6px;
 }
 
+.contact-qr-center {
+  display: block;
+  width: fit-content;
+  margin: 14px auto 0;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

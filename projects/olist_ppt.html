@@ -356,6 +356,27 @@
       font-size: 13px;
     }
 
+    .deck-contact-qr {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .deck-contact-qr img {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #fff;
+      padding: 2px;
+    }
+
     @media (max-width: 900px) {
       .slide-body {
         grid-template-columns: minmax(0, 1fr);
@@ -427,6 +448,10 @@
         <span class="key">→ / ↓</span> Next ›
       </button>
       <div class="hint">Use ← / → / ↑ / ↓ keys, mouse wheel, or buttons to navigate</div>
+      <div class="deck-contact-qr">
+        <img src="../assets/contact-qr.png" alt="QR code to save Danny Teo contact">
+        <span>Scan to save contact</span>
+      </div>
     </div>
   </footer>
 </div>

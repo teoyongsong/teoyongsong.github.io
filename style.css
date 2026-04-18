@@ -560,6 +560,22 @@ section.section-wide {
   margin-top: 0;
 }
 
+.subscribe-gift {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #333;
+  background: #f6f8fb;
+  border-radius: 8px;
+  border-left: 4px solid #2d4566;
+}
+
+.subscribe-gift em {
+  font-style: italic;
+  color: #444;
+}
+
 .conversion-work-lead {
   margin: 0 0 14px;
   color: #444;

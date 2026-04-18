@@ -22,9 +22,10 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
   - HDB Resale Prices · [hdb-resale-prices.streamlit.app](https://hdb-resale-prices.streamlit.app/)
 - **Projects** — Responsive grid of project cards (up to three per row on desktop), each linking to a page under `projects/` with overview, tech, and links (repos, live apps, slides where relevant). Includes Once Upon App (storytelling MVP), RAG Studio (private-by-default), CNN waste classification (computer vision), Online Retail Customer Segmentation (unsupervised learning), HDB resale price predictor (ML), Python & ML quizzes, Quantum Dice, CISSP quizzes, Web Safety, this portfolio, SG Accounting, HDB Resale Prices (exploration app), Activity Tracker, Olist pipeline, LMS, and more.
 - **Blog** — [blog.html](https://teoyongsong.github.io/blog.html) lists posts; the first article is *From Data to Business Impact* (data lifecycle: collect → store → clean → analyze → apply → improve). New posts can be started from `blog/post-template.html`.
-- **Work together** — Homepage section with links to the consulting profile and email for project briefs.
-- **Contact** — WhatsApp, email, GitHub, LinkedIn.
-- **Visitor statistics** — Page and site visitor/like counts via [counterapi.dev](https://counterapi.dev/) (`visitor-stats.js`).
+- **Latest insight** — The homepage highlights the most recent post in a card (above flagship projects) so writing sits next to builds.
+- **Work together** — Persistent **Work with me** in the header and hero; the section below the fold has the consulting profile link and copy-to-clipboard email for project briefs.
+- **Contact** — WhatsApp, email, GitHub, LinkedIn, QR code.
+- **Scripts** — `visitor-stats.js` is loaded where contact QR codes appear: it wires tap-to-download for the vCard (`.contact-qr`). Visitor/like counter UI was removed to avoid placeholder “--” values when the counter API is unavailable.
 
 ---
 
@@ -42,7 +43,7 @@ The PDF is not linked from the site; see `private/README.md` if you use it as an
 
 ```
 teoyongsong.github.io/
-├── index.html              # Homepage (About, Live apps, Projects, Work together, Contact, stats)
+├── index.html              # Homepage (hero, insight card, featured projects, Work together, Contact)
 ├── robots.txt              # Disallow /private/ (no PDF is stored there on purpose)
 ├── requirements.txt        # fpdf2 — local / optional: build Project Digest PDF
 ├── scripts/
@@ -51,8 +52,8 @@ teoyongsong.github.io/
 │   ├── README.md
 │   └── project-digest.pdf  # Project Digest (regenerate via scripts/build_project_digest_pdf.py)
 ├── blog.html               # Blog index
-├── style.css               # Global styles (layout, blog, projects, engagement)
-├── visitor-stats.js        # Visitor / like counters (counterapi.dev)
+├── style.css               # Global styles (layout, blog, projects)
+├── visitor-stats.js        # Contact QR tap → vCard; optional counter API helpers
 ├── favicon.png
 ├── tys.jpg                 # Header photo
 ├── README.md
@@ -84,7 +85,7 @@ teoyongsong.github.io/
 
 - **HTML5**, **CSS3** (flexbox, grid, `clamp` / responsive spacing)
 - **GitHub Pages** — no build step
-- **Vanilla JavaScript** — `visitor-stats.js` only  
+- **Vanilla JavaScript** — `visitor-stats.js` (contact QR / optional counters)  
 - No frameworks or bundler.
 
 ---

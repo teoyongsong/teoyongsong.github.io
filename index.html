@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Danny Teo — 3-day sprint prototypes, AI/ML apps, live demos, and consulting. Portfolio, flagship builds, and contact.">
+  <meta name="description" content="Danny Teo — 3-day sprint prototypes, AI/ML apps, live demos, and consulting. Portfolio, flagship builds, latest insights, and contact.">
   <meta name="keywords" content="Danny Teo, AI portfolio, machine learning, data projects, Streamlit apps, software developer">
   <title>Danny Teo's Portfolio</title>
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -17,6 +17,7 @@
         <h1>Danny Teo Yong Song</h1>
         <p>Consultant · Builder · AI, data &amp; software</p>
       </div>
+      <a class="header-cta" href="#work-together">Work with me</a>
     </div>
   </header>
 
@@ -24,6 +25,7 @@
     <a href="#about">About</a>
     <a href="#hero-capabilities">Capabilities</a>
     <a href="#portfolio-consulting-bridge">Portfolio vs consulting</a>
+    <a href="#latest-insight">Insight</a>
     <a href="#featured-projects">Featured</a>
     <a href="#other-apps">Other apps</a>
     <a href="blog.html">Blog</a>
@@ -40,7 +42,31 @@
         <p class="hero-lead">AI, data, security, and product storytelling—expressed as live apps and honest write-ups, not slideware.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#featured-projects">Explore flagship projects</a>
-          <a class="btn btn-secondary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Work with me (consulting)</a>
+          <a class="btn btn-secondary" href="#work-together">Work with me</a>
+        </div>
+        <p class="hero-cta-foot">
+          <a class="hero-cta-foot-link" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Consulting profile, talks &amp; workshops →</a>
+        </p>
+        <div class="domain-snapshot" aria-label="Focus areas at a glance">
+          <p class="domain-snapshot-label">Where builds cluster</p>
+          <div class="domain-grid">
+            <div class="domain-tile">
+              <span class="domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v3M5 6l2 2M19 6l-2 2M5 18l2-2M19 18l-2-2M12 21v-3"/><circle cx="12" cy="12" r="4"/></svg></span>
+              <span class="domain-tile-text">AI / ML</span>
+            </div>
+            <div class="domain-tile">
+              <span class="domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              <span class="domain-tile-text">Security</span>
+            </div>
+            <div class="domain-tile">
+              <span class="domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15v4"/><path d="M12 11v8"/><path d="M16 7v12"/></svg></span>
+              <span class="domain-tile-text">Data</span>
+            </div>
+            <div class="domain-tile">
+              <span class="domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+              <span class="domain-tile-text">Storytelling</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="hero-visual" id="hero-capabilities" aria-labelledby="hero-radar-heading">
@@ -102,12 +128,34 @@
     </div>
   </section>
 
+  <section id="latest-insight" class="section-wide latest-insight-section" aria-labelledby="latest-insight-heading">
+    <h2 id="latest-insight-heading">Latest insight</h2>
+    <p class="section-lead latest-insight-deck">Notes on delivery and how technology supports business—not only repo READMEs.</p>
+    <article class="insight-featured-card">
+      <a class="insight-featured-link" href="blog/how-i-built-my-personal-website-with-github-pages.html">
+        <div class="insight-featured-cover" aria-hidden="true">
+          <svg class="insight-cover-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg>
+        </div>
+        <div class="insight-featured-body">
+          <p class="insight-featured-meta"><time datetime="2026-04-17">April 2026</time> · Website building</p>
+          <h3>How I Built My Personal Website with GitHub Pages (and How You Can Too)</h3>
+          <p class="insight-featured-excerpt">A step-by-step walkthrough to launch a personal site with GitHub Pages using simple HTML/CSS—the same lightweight stack as this portfolio.</p>
+          <span class="insight-featured-cta">Read article →</span>
+        </div>
+      </a>
+    </article>
+    <p class="insight-more-links">Also on the blog: <a href="blog/beginners-guide-to-machine-learning.html">Machine learning fundamentals</a>, <a href="blog/from-data-to-business-impact.html">From data to business impact</a>, <a href="blog.html">All posts</a></p>
+  </section>
+
   <section id="featured-projects">
     <h2>Featured projects</h2>
     <p class="section-lead">Flagship builds with live demos—each line below states <strong>business impact</strong> first.</p>
     <div class="featured-grid featured-grid-four">
       <article class="project-card featured-card">
-        <span class="project-tag">RAG / LLM</span>
+        <div class="featured-card-head">
+          <span class="featured-domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M5 6l2 2M19 6l-2 2M5 18l2-2M19 18l-2-2M12 21v-3"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <span class="project-tag">RAG / LLM</span>
+        </div>
         <h3>RAG Studio (Private-by-Default)</h3>
         <p class="featured-impact"><strong>Impact:</strong> Private document Q&amp;A without sending data to the cloud—trust for legal, HR, and IP-heavy teams.</p>
         <p>Local-first retrieval-augmented generation with Streamlit, FastAPI, and CLI interfaces.</p>
@@ -117,7 +165,10 @@
         </div>
       </article>
       <article class="project-card featured-card">
-        <span class="project-tag">ML / Tabular Data</span>
+        <div class="featured-card-head">
+          <span class="featured-domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15v4"/><path d="M12 11v8"/><path d="M16 7v12"/></svg></span>
+          <span class="project-tag">ML / Tabular Data</span>
+        </div>
         <h3>HDB resale price predictor</h3>
         <p class="featured-impact"><strong>Impact:</strong> Faster, evidence-backed resale discussions for buyers, sellers, and advisors using public data.</p>
         <p>Supervised learning on public HDB data to a deployable model bundle in Streamlit.</p>
@@ -127,7 +178,10 @@
         </div>
       </article>
       <article class="project-card featured-card">
-        <span class="project-tag">Computer vision</span>
+        <div class="featured-card-head">
+          <span class="featured-domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+          <span class="project-tag">Computer vision</span>
+        </div>
         <h3>CNN waste classification</h3>
         <p class="featured-impact"><strong>Impact:</strong> Operational sorting and education—visual feedback that supports recycling and compliance narratives.</p>
         <p>PyTorch image classification with Streamlit inference for instant demos.</p>
@@ -137,7 +191,10 @@
         </div>
       </article>
       <article class="project-card featured-card">
-        <span class="project-tag">Product / UX</span>
+        <div class="featured-card-head">
+          <span class="featured-domain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+          <span class="project-tag">Product / UX</span>
+        </div>
         <h3>Once Upon App (Storytelling MVP)</h3>
         <p class="featured-impact"><strong>Impact:</strong> Engaging, age-aware stories for families—demonstrates product storytelling beyond dashboards.</p>
         <p>Personalized storytelling for families—profiles, structured sections, and a local story library.</p>
@@ -147,16 +204,6 @@
         </div>
       </article>
     </div>
-  </section>
-
-  <section id="latest-insights">
-    <h2>Latest Insights</h2>
-    <ul class="latest-insights-list">
-      <li><a href="blog/how-i-built-my-personal-website-with-github-pages.html">How I Built My Personal Website with GitHub Pages (and How You Can Too)</a> <span>· step-by-step setup guide</span></li>
-      <li><a href="blog/beginners-guide-to-machine-learning.html">A Beginner’s Guide to Machine Learning</a> <span>· fundamentals and practical context</span></li>
-      <li><a href="blog/from-data-to-business-impact.html">From Data to Business Impact</a> <span>· a seven-step data lifecycle view</span></li>
-      <li><a href="blog.html">View all blog posts</a></li>
-    </ul>
   </section>
 
   <section id="other-apps" class="other-apps-section section-wide" aria-labelledby="other-apps-heading">
@@ -264,30 +311,6 @@
       <p class="contact-qr-label">Scan to save my contact</p>
       <img src="assets/contact-qr.png" alt="QR code to save Danny Teo Yong Song contact details" width="180" height="180">
     </div>
-  </section>
-
-  <section id="engagement">
-    <h2>Visitor Statistics</h2>
-    <div class="engagement-grid">
-      <div class="stat-card">
-        <p class="stat-label">Overall visitors</p>
-        <p class="stat-value" id="overall-visitor-count">--</p>
-      </div>
-      <div class="stat-card">
-        <p class="stat-label">Overall likes</p>
-        <p class="stat-value" id="overall-like-count">--</p>
-      </div>
-      <div class="stat-card">
-        <p class="stat-label">This page visitors</p>
-        <p class="stat-value" id="page-visitor-count">--</p>
-      </div>
-      <div class="stat-card">
-        <p class="stat-label">This page likes</p>
-        <p class="stat-value" id="page-like-count">--</p>
-      </div>
-    </div>
-    <button id="like-btn" class="like-btn" type="button">Like this page</button>
-    <p id="engagement-message" class="engagement-message"></p>
   </section>
 
   <footer>

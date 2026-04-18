@@ -21,8 +21,27 @@ header {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header-cta {
+  margin-left: auto;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #fff !important;
+  background: #2d4566;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  white-space: nowrap;
+}
+
+.header-cta:hover {
+  background: #243a57;
+  text-decoration: none;
 }
 
 .header-photo {
@@ -53,6 +72,13 @@ header {
 
   .header-text h1 {
     font-size: 1.3em;
+  }
+
+  .header-cta {
+    margin-left: 0;
+    flex: 1 1 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
 
@@ -210,6 +236,70 @@ section.section-wide {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.hero-cta-foot {
+  margin: 12px 0 0;
+  font-size: 0.88em;
+}
+
+.hero-cta-foot-link {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+}
+
+.hero-cta-foot-link:hover {
+  color: #fff;
+}
+
+.domain-snapshot {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 440px;
+}
+
+.domain-snapshot-label {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.domain-tile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.domain-icon {
+  display: flex;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.domain-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.domain-tile-text {
+  line-height: 1.25;
 }
 
 .btn {
@@ -422,6 +512,106 @@ section.section-wide {
   background: #4d3d66;
 }
 
+/* Latest insight (homepage featured post) */
+.latest-insight-section {
+  background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+}
+
+.latest-insight-deck {
+  margin-top: 0;
+}
+
+.insight-featured-card {
+  margin-top: 12px;
+  border: 1px solid #d8e0eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fafbfd;
+}
+
+.insight-featured-link {
+  display: grid;
+  grid-template-columns: minmax(100px, 140px) 1fr;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.insight-featured-link:hover {
+  background: #f0f4fa;
+}
+
+.insight-featured-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  background: linear-gradient(155deg, #2d4566 0%, #5c4a7a 100%);
+}
+
+.insight-cover-icon {
+  width: 48px;
+  height: 48px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.insight-featured-body {
+  padding: 18px 20px;
+  min-width: 0;
+}
+
+.insight-featured-meta {
+  margin: 0 0 8px;
+  font-size: 0.85em;
+  color: #666;
+}
+
+.insight-featured-body h3 {
+  margin: 0 0 10px;
+  font-size: 1.12em;
+  color: #1f2d44;
+  line-height: 1.35;
+}
+
+.insight-featured-excerpt {
+  margin: 0 0 12px;
+  font-size: 0.94em;
+  color: #444;
+  line-height: 1.5;
+}
+
+.insight-featured-cta {
+  font-weight: 600;
+  font-size: 0.92em;
+  color: #2d4566;
+}
+
+.insight-more-links {
+  margin: 14px 0 0;
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.5;
+}
+
+.insight-more-links a {
+  color: #1a5f9e;
+}
+
+@media (max-width: 600px) {
+  .insight-featured-link {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-featured-cover {
+    padding: 18px;
+    min-height: 88px;
+  }
+}
+
 /* Featured + highlights */
 .featured-grid {
   display: grid;
@@ -431,6 +621,29 @@ section.section-wide {
 
 .featured-grid-four {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.featured-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.featured-card-head .project-tag {
+  margin-bottom: 0;
+}
+
+.featured-domain-icon {
+  display: flex;
+  align-items: center;
+  color: #2d4566;
+}
+
+.featured-domain-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .featured-card h3 {

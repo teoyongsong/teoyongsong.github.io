@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Danny Teo — consultant and builder: practical AI/ML prototypes, live demos, and sprint-style delivery from idea to working app. Portfolio, blog, and contact.">
+  <meta name="description" content="Danny Teo — 3-day sprint prototypes, AI/ML apps, live demos, and consulting. Portfolio, flagship builds, digest PDF, and contact.">
   <meta name="keywords" content="Danny Teo, AI portfolio, machine learning, data projects, Streamlit apps, software developer">
   <title>Danny Teo's Portfolio</title>
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -22,65 +22,57 @@
 
   <nav>
     <a href="#about">About</a>
-    <a href="#capabilities">Capabilities</a>
+    <a href="#hero-capabilities">Capabilities</a>
     <a href="#portfolio-consulting-bridge">Portfolio vs consulting</a>
     <a href="#featured-projects">Featured</a>
-    <a href="#other-projects">Other projects</a>
+    <a href="#other-apps">Other apps</a>
     <a href="blog.html">Blog</a>
-    <a href="#subscribe">Subscribe</a>
+    <a href="#conversion">Subscribe</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <p class="hero-kicker">AI • Data • Software</p>
-      <h2>Building practical apps and sharing what works.</h2>
-      <p class="hero-hook">I help teams move from ideas to working prototypes in days—then iterate with real users and ship.</p>
-      <p class="hero-lead">Hands-on AI and data builds, usable tools, and write-ups so you can see what worked and reuse the patterns.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#featured-projects">View featured projects</a>
-        <a class="btn btn-secondary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Speaking, training & consulting</a>
+  <section id="hero" class="hero hero-split section-wide">
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <p class="hero-kicker">Consultant · Builder · Portfolio</p>
+        <h2>From sprint to shipped prototype.</h2>
+        <p class="hero-hook">I help teams turn ideas into working prototypes in <strong>3-day sprints</strong>—then iterate with users and harden what works.</p>
+        <p class="hero-lead">AI, data, security, and product storytelling—expressed as live apps and honest write-ups, not slideware.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#featured-projects">Explore flagship projects</a>
+          <a class="btn btn-secondary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Work with me (consulting)</a>
+        </div>
+      </div>
+      <div class="hero-visual" id="hero-capabilities" aria-labelledby="hero-radar-heading">
+        <h3 id="hero-radar-heading" class="hero-radar-heading">Capability snapshot</h3>
+        <p class="hero-radar-lead">Breadth at a glance—illustrative, not a scorecard.</p>
+        <figure class="radar-figure radar-figure-hero">
+          <svg class="radar-chart radar-chart-hero" viewBox="0 0 200 200" role="img" aria-labelledby="radar-title radar-desc">
+            <title id="radar-title">Capability emphasis across six domains</title>
+            <desc id="radar-desc">Hexagon radar: AI and ML, data, security, consulting, storytelling, engineering.</desc>
+            <polygon class="radar-grid-hero" points="100,80 117.3,90 117.3,110 100,120 82.7,110 82.7,90" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <polygon class="radar-grid-hero" points="100,60 134.6,80 134.6,120 100,140 65.4,120 65.4,80" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <polygon class="radar-grid-hero" points="100,40 152,70 152,130 100,160 48,130 48,70" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <polygon class="radar-grid-hero" points="100,20 169.3,60 169.3,140 100,180 30.7,140 30.7,60" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+            <line class="radar-axis-hero" x1="100" y1="100" x2="100" y2="20" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line class="radar-axis-hero" x1="100" y1="100" x2="169.3" y2="60" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line class="radar-axis-hero" x1="100" y1="100" x2="169.3" y2="140" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line class="radar-axis-hero" x1="100" y1="100" x2="100" y2="180" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line class="radar-axis-hero" x1="100" y1="100" x2="30.7" y2="140" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line class="radar-axis-hero" x1="100" y1="100" x2="30.7" y2="60" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <polygon class="radar-area-hero" points="100,28 163.7,63.2 152,130 100,168 43.2,132.8 39,64.8" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.85)" stroke-width="2"/>
+          </svg>
+        </figure>
+        <ul class="capability-legend capability-legend-hero">
+          <li><span class="cap-pct-hero">90%</span> AI &amp; ML</li>
+          <li><span class="cap-pct-hero">92%</span> Data &amp; ML</li>
+          <li><span class="cap-pct-hero">75%</span> Security</li>
+          <li><span class="cap-pct-hero">85%</span> Consulting</li>
+          <li><span class="cap-pct-hero">82%</span> Storytelling</li>
+          <li><span class="cap-pct-hero">88%</span> Engineering</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p class="about-hook">Consultant and builder at the intersection of strategy, software, and data—not a generic dev-for-hire: I run short, outcome-focused sprints that end in something you can click, test, or pilot.</p>
-    <p>Hello! I’m Danny Teo. I started in business transformation, then leaned into shipping practical tools in AI/ML, security, and analytics so teams get past slides and into working systems.</p>
-    <p><strong>This site</strong> is the technical portfolio: live demos, project pages, and blog notes. <strong><a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a></strong> is the consulting and professional profile—speaking, training, and engagements. Same person; different entry points depending on what you need.</p>
-  </section>
-
-  <section id="capabilities" class="capabilities-section section-wide" aria-labelledby="capabilities-heading">
-    <h2 id="capabilities-heading">Capabilities at a glance</h2>
-    <p class="section-lead">Relative emphasis across domains (illustrative—not a scorecard). Technical depth and business-facing delivery sit side by side.</p>
-    <div class="capabilities-layout">
-      <figure class="radar-figure">
-        <svg class="radar-chart" viewBox="0 0 200 200" role="img" aria-labelledby="radar-title radar-desc">
-          <title id="radar-title">Capability emphasis across five domains</title>
-          <desc id="radar-desc">Radar chart showing relative strength in AI and LLM, ML and data, security, software engineering, and consulting.</desc>
-          <polygon class="radar-grid" points="100,80 119.0,93.8 111.8,116.2 88.2,116.2 81.0,93.8" fill="none" stroke="#d8dee8" stroke-width="1"/>
-          <polygon class="radar-grid" points="100,60 138.0,87.6 123.5,132.4 76.5,132.4 62.0,87.6" fill="none" stroke="#d8dee8" stroke-width="1"/>
-          <polygon class="radar-grid" points="100,40 157.1,81.5 135.3,148.5 64.7,148.5 42.9,81.5" fill="none" stroke="#d8dee8" stroke-width="1"/>
-          <polygon class="radar-grid" points="100,20 176.1,75.3 147.0,164.7 53.0,164.7 23.9,75.3" fill="none" stroke="#c5ced9" stroke-width="1"/>
-          <line class="radar-axis" x1="100" y1="100" x2="100" y2="20" stroke="#c5ced9" stroke-width="1"/>
-          <line class="radar-axis" x1="100" y1="100" x2="176.1" y2="75.3" stroke="#c5ced9" stroke-width="1"/>
-          <line class="radar-axis" x1="100" y1="100" x2="147.0" y2="164.7" stroke="#c5ced9" stroke-width="1"/>
-          <line class="radar-axis" x1="100" y1="100" x2="53.0" y2="164.7" stroke="#c5ced9" stroke-width="1"/>
-          <line class="radar-axis" x1="100" y1="100" x2="23.9" y2="75.3" stroke="#c5ced9" stroke-width="1"/>
-          <polygon class="radar-area" points="100.0,28.0 170.0,77.3 135.3,148.5 58.6,157.0 35.3,79.0" fill="rgba(45, 69, 102, 0.25)" stroke="#2d4566" stroke-width="2"/>
-        </svg>
-        <figcaption class="radar-caption">Five domains: AI &amp; LLM, ML &amp; data, security, engineering, consulting.</figcaption>
-      </figure>
-      <ul class="capability-legend">
-        <li><span class="cap-dot cap-ai"></span> AI &amp; LLM <span class="cap-pct">90%</span></li>
-        <li><span class="cap-dot cap-ml"></span> ML &amp; data <span class="cap-pct">92%</span></li>
-        <li><span class="cap-dot cap-sec"></span> Security <span class="cap-pct">75%</span></li>
-        <li><span class="cap-dot cap-eng"></span> Software engineering <span class="cap-pct">88%</span></li>
-        <li><span class="cap-dot cap-con"></span> Consulting &amp; delivery <span class="cap-pct">85%</span></li>
-      </ul>
-    </div>
-    <p class="capabilities-footnote">For stakeholders who want <strong>business impact first</strong>, start with outcomes on each project card; expand into technical detail when you need it.</p>
   </section>
 
   <section id="portfolio-consulting-bridge" class="bridge-section section-wide" aria-labelledby="bridge-heading">
@@ -95,7 +87,7 @@
           <li>Blog: implementation notes and learning resources</li>
           <li>Open repos and reproducible experiments</li>
         </ul>
-        <p class="bridge-card-cta"><a class="btn btn-bridge" href="#featured-projects">Explore featured projects</a></p>
+        <p class="bridge-card-cta"><a class="btn btn-bridge" href="#featured-projects">Explore flagship projects</a></p>
       </div>
       <div class="bridge-card bridge-card-consulting">
         <h3 class="bridge-card-title">Consulting · dannyteo.github.io</h3>
@@ -112,11 +104,12 @@
 
   <section id="featured-projects">
     <h2>Featured projects</h2>
-    <p class="section-lead">Flagship builds with live demos—start here if you want proof, not just descriptions.</p>
+    <p class="section-lead">Flagship builds with live demos—each line below states <strong>business impact</strong> first.</p>
     <div class="featured-grid featured-grid-four">
       <article class="project-card featured-card">
         <span class="project-tag">RAG / LLM</span>
         <h3>RAG Studio (Private-by-Default)</h3>
+        <p class="featured-impact"><strong>Impact:</strong> Private document Q&amp;A without sending data to the cloud—trust for legal, HR, and IP-heavy teams.</p>
         <p>Local-first retrieval-augmented generation with Streamlit, FastAPI, and CLI interfaces.</p>
         <div class="featured-card-actions">
           <a class="btn btn-featured btn-featured-primary" href="https://rag-model.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
@@ -126,6 +119,7 @@
       <article class="project-card featured-card">
         <span class="project-tag">ML / Tabular Data</span>
         <h3>HDB resale price predictor</h3>
+        <p class="featured-impact"><strong>Impact:</strong> Faster, evidence-backed resale discussions for buyers, sellers, and advisors using public data.</p>
         <p>Supervised learning on public HDB data to a deployable model bundle in Streamlit.</p>
         <div class="featured-card-actions">
           <a class="btn btn-featured btn-featured-primary" href="https://hdb-prices-predictor.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
@@ -135,6 +129,7 @@
       <article class="project-card featured-card">
         <span class="project-tag">Computer vision</span>
         <h3>CNN waste classification</h3>
+        <p class="featured-impact"><strong>Impact:</strong> Operational sorting and education—visual feedback that supports recycling and compliance narratives.</p>
         <p>PyTorch image classification with Streamlit inference for instant demos.</p>
         <div class="featured-card-actions">
           <a class="btn btn-featured btn-featured-primary" href="https://cnn-waste.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
@@ -144,6 +139,7 @@
       <article class="project-card featured-card">
         <span class="project-tag">Product / UX</span>
         <h3>Once Upon App (Storytelling MVP)</h3>
+        <p class="featured-impact"><strong>Impact:</strong> Engaging, age-aware stories for families—demonstrates product storytelling beyond dashboards.</p>
         <p>Personalized storytelling for families—profiles, structured sections, and a local story library.</p>
         <div class="featured-card-actions">
           <a class="btn btn-featured btn-featured-primary" href="https://story-telling.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
@@ -163,10 +159,12 @@
     </ul>
   </section>
 
-  <section id="other-projects">
-    <h2>Other projects</h2>
-    <p class="section-lead">Secondary builds, experiments, and repos—still real work, with more detail on each page. Several include live apps; some are pipelines or local-only.</p>
-    <div class="project-grid">
+  <section id="other-apps" class="other-apps-section section-wide" aria-labelledby="other-apps-heading">
+    <h2 id="other-apps-heading">Other apps &amp; experiments</h2>
+    <p class="section-lead">Everything beyond the flagships—still real work. Expand to browse; keep the page focused on demos above the fold.</p>
+    <details class="other-apps-details">
+      <summary class="other-apps-summary">Show 11 more projects <span class="other-apps-hint">(segmentation, quizzes, pipelines, full-stack…)</span></summary>
+      <div class="project-grid other-apps-grid">
       <a href="projects/customer-segmentation.html" class="project-card">
         <h3>Online Retail Customer Segmentation</h3>
         <p>Unsupervised learning project using RFM features: KMeans baseline + GMM comparison, with segment profiling and recommended CRM actions.</p>
@@ -223,34 +221,55 @@
         <span class="project-link">View project &rarr;</span>
       </a>
     </div>
+    </details>
   </section>
 
-  <section id="subscribe">
-    <h2>Get the Project Digest + new project alerts</h2>
-    <p class="subscribe-lead">
-      Subscribe for a short email when new work lands here. Opt in below to receive the <strong>Project Digest</strong> (PDF)—a curated one-pager: flagship demos, how they map to business outcomes, and “Top 5 AI/ML-style prototypes for impact” you can show stakeholders.
-      Your address is used only for this list and is not shown on the site.
-    </p>
-    <!-- FormSubmit: posts to your inbox (first time you must activate the address at formsubmit.co) -->
-    <form class="subscribe-form subscribe-form-stack" action="https://formsubmit.co/teo_yongsong@yahoo.com.sg" method="POST">
-      <label class="sr-only" for="subscribe-email">Email</label>
-      <input id="subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-      <label class="sr-only" for="subscribe-name">Name (optional)</label>
-      <input id="subscribe-name" type="text" name="name" placeholder="Name (optional)" autocomplete="name">
-      <label class="subscribe-digest-opt">
-        <input type="checkbox" name="send_project_digest_pdf" value="yes" checked>
-        Send me the Project Digest (PDF) and the “Top 5” overview
-      </label>
-      <input type="hidden" name="_subject" value="Portfolio: subscribe + Project Digest request">
-      <input type="hidden" name="_next" value="https://teoyongsong.github.io/?subscribed=1#subscribe">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="subscribe-honeypot" aria-hidden="true">
-      <button type="submit">Subscribe</button>
-    </form>
-    <p class="subscribe-note">
-      Submissions go to the site owner’s private inbox only. If you opt in to the digest, expect a reply with the PDF link (or attachment) after your address is confirmed—no spam, no resale. The first time you use FormSubmit, you may need to confirm your email on their site.
-      For automated “new project” emails to a mailing list, configure Resend + GitHub Actions in the repo README.
-    </p>
+  <section id="about">
+    <h2>About</h2>
+    <p class="about-value-prop">I help teams turn ideas into working prototypes in <strong>3-day sprints</strong>—so stakeholders see something real before committing to a long programme.</p>
+    <p class="about-hook">Consultant and builder: strategy, software, and data together—not slideware. This site is code and demos; <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a> is speaking, training, and formal consulting.</p>
+  </section>
+
+  <section id="conversion" class="conversion-section section-wide" aria-labelledby="conversion-heading">
+    <h2 id="conversion-heading">Download, subscribe, or work together</h2>
+    <div class="conversion-grid">
+      <div id="subscribe" class="conversion-panel conversion-panel-lead">
+        <h3 class="conversion-subheading">Lead magnet + updates</h3>
+        <p class="subscribe-lead">
+          Get the downloadable <strong>Top 5 AI/ML Prototypes for Business Impact</strong> (included in the <strong>Project Digest</strong> PDF)—flagship demos mapped to outcomes you can show leaders—plus a short email when new work ships here.
+          Your address stays private to this list.
+        </p>
+        <!-- FormSubmit: posts to your inbox (first time you must activate the address at formsubmit.co) -->
+        <form class="subscribe-form subscribe-form-stack" action="https://formsubmit.co/teo_yongsong@yahoo.com.sg" method="POST">
+          <label class="sr-only" for="subscribe-email">Email</label>
+          <input id="subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          <label class="sr-only" for="subscribe-name">Name (optional)</label>
+          <input id="subscribe-name" type="text" name="name" placeholder="Name (optional)" autocomplete="name">
+          <label class="subscribe-digest-opt">
+            <input type="checkbox" name="send_project_digest_pdf" value="yes" checked>
+            Send me the Project Digest PDF (includes “Top 5” prototypes)
+          </label>
+          <input type="hidden" name="_subject" value="Portfolio: subscribe + Project Digest / Top 5 request">
+          <input type="hidden" name="_next" value="https://teoyongsong.github.io/?subscribed=1#subscribe">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="subscribe-honeypot" aria-hidden="true">
+          <button type="submit" class="btn-convert-submit">Get the digest &amp; subscribe</button>
+        </form>
+        <p class="subscribe-note">
+          Submissions go to the owner’s inbox only. If you opt in, expect the PDF link or attachment after confirmation—no spam. First-time FormSubmit users may need to confirm email on their site.
+          For automated new-project mail, use Resend + GitHub Actions (see repo README).
+        </p>
+      </div>
+      <div class="conversion-panel conversion-panel-work">
+        <h3 class="conversion-subheading">Work with me</h3>
+        <p class="conversion-work-lead">Sprints, workshops, and advisory—same person as these builds, scoped for your team.</p>
+        <div class="conversion-work-cta">
+          <a class="btn btn-work-primary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Open consulting profile</a>
+          <a class="btn btn-work-secondary" href="mailto:teo_yongsong@yahoo.com.sg?subject=Project%20inquiry%20from%20portfolio">Email a project brief</a>
+        </div>
+        <p class="conversion-work-note">Prefer chat? Use <a href="#contact">Contact</a> below for WhatsApp and social links.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">

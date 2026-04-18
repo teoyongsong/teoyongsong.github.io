@@ -1,0 +1,111 @@
+# Builds the Project Digest PDF (scripts/build_project_digest_pdf.py) and emails it via Resend.
+# Not triggered by the FormSubmit form directly (static Pages cannot call GitHub). Use:
+# - workflow_dispatch (manual): Actions tab → run workflow → enter subscriber email
+# - repository_dispatch: automation (e.g. Zapier/Make) POSTs to GitHub API with client_payload + secret
+#
+# Secrets: RESEND_API_KEY, NOTIFY_FROM_EMAIL (same as notify-subscribers workflow)
+# Optional: WEBHOOK_SECRET — required in client_payload.secret for repository_dispatch
+name: Send welcome digest (Project Digest PDF)
+
+on:
+  workflow_dispatch:
+    inputs:
+      subscriber_email:
+        description: Recipient email address
+        required: true
+        type: string
+      attach_pdf:
+        description: Attach Project Digest PDF
+        required: false
+        type: boolean
+        default: true
+  repository_dispatch:
+    types: [new_subscriber]
+
+jobs:
+  send:
+    if: ${{ secrets.RESEND_API_KEY != '' && secrets.NOTIFY_FROM_EMAIL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate repository_dispatch secret
+        if: github.event_name == 'repository_dispatch'
+        env:
+          EXPECT: ${{ secrets.WEBHOOK_SECRET }}
+          GOT: ${{ github.event.client_payload.secret }}
+        run: |
+          if [ -z "$EXPECT" ] || [ "$EXPECT" != "$GOT" ]; then
+            echo "::error::Invalid or missing client_payload.secret (set WEBHOOK_SECRET in repo secrets)."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build Project Digest PDF
+        run: python3 scripts/build_project_digest_pdf.py /tmp/project-digest.pdf
+
+      - name: Send email via Resend
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_FROM_EMAIL: ${{ secrets.NOTIFY_FROM_EMAIL }}
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_EMAIL: ${{ github.event.inputs.subscriber_email }}
+          INPUT_ATTACH: ${{ github.event.inputs.attach_pdf }}
+          PAYLOAD_EMAIL: ${{ github.event.client_payload.email }}
+          PAYLOAD_ATTACH: ${{ github.event.client_payload.attach_pdf }}
+        run: |
+          python3 << 'PY'
+          import base64, json, os, urllib.request
+
+          event = os.environ["EVENT_NAME"]
+          if event == "workflow_dispatch":
+              to = os.environ.get("INPUT_EMAIL", "").strip()
+              attach = os.environ.get("INPUT_ATTACH", "true").lower() in ("true", "1", "yes")
+          else:
+              to = os.environ.get("PAYLOAD_EMAIL", "").strip()
+              pa = os.environ.get("PAYLOAD_ATTACH", "")
+              attach = pa.lower() not in ("false", "0", "no", "") if pa else True
+
+          if not to:
+              raise SystemExit("No recipient email")
+
+          key = os.environ["RESEND_API_KEY"]
+          from_addr = os.environ["NOTIFY_FROM_EMAIL"]
+
+          with open("/tmp/project-digest.pdf", "rb") as f:
+              b64 = base64.standard_b64encode(f.read()).decode("ascii")
+
+          html = """<p>Hello,</p>
+          <p>Thanks for subscribing to <strong>new project updates</strong> from Danny Teo's portfolio.</p>
+          <p>Attached: your welcome gift, the <strong>Project Digest</strong> (PDF) with a &quot;Top 5&quot; overview of flagship demos and how they map to business outcomes.</p>
+          <p>Site: <a href="https://teoyongsong.github.io/">teoyongsong.github.io</a> · Consulting: <a href="https://dannyteo.github.io/">dannyteo.github.io</a></p>
+          <p><small>Automated message · Resend</small></p>"""
+
+          payload = {
+              "from": from_addr,
+              "to": [to],
+              "subject": "Your Project Digest (PDF) - Danny Teo's portfolio",
+              "html": html,
+          }
+          if attach:
+              payload["attachments"] = [{"filename": "project-digest.pdf", "content": b64}]
+
+          data = json.dumps(payload).encode("utf-8")
+          req = urllib.request.Request(
+              "https://api.resend.com/emails",
+              data=data,
+              headers={
+                  "Authorization": f"Bearer {key}",
+                  "Content-Type": "application/json",
+              },
+              method="POST",
+          )
+          with urllib.request.urlopen(req, timeout=60) as resp:
+              print(resp.status, resp.read().decode("utf-8", errors="replace"))
+          PY

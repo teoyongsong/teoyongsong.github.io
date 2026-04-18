@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  PERSONAL TEMPLATE — not committed (see .gitignore: blog/*.local.html)
+
+  Publishing checklist
+  --------------------
+  1. Copy this file to a real slug, e.g. blog/my-topic.html
+     (do not commit any *.local.html file)
+  2. Replace TITLE, DATE, CATEGORY, lede, and body sections below.
+  3. Update blog.html: add a new <li class="blog-list-item">…</li>
+     at the TOP of <ul class="blog-list"> (newest post first).
+  4. Commit: blog.html + blog/<slug>.html only.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TITLE · Blog | Danny Teo's Portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="../tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
+      <div class="header-text">
+        <h1>Danny Teo Yong Song</h1>
+        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#live-apps">Live apps</a>
+    <a href="../index.html#other-apps">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#conversion">Subscribe</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="blog-page">
+    <article class="blog-post">
+      <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+      <header class="blog-post-header">
+        <h1>TITLE</h1>
+        <p class="blog-post-meta"><time datetime="YYYY-MM-DD">Month YYYY</time> · CATEGORY</p>
+      </header>
+      <p class="blog-post-lede">
+        One short paragraph: what the reader will learn or why this post exists.
+      </p>
+      <div class="blog-post-body">
+        <h2>Section heading</h2>
+        <p>Body paragraphs go here.</p>
+
+        <h2>Another section</h2>
+        <ul>
+          <li>Bullet points if useful.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <section id="engagement">
+    <h2>Visitor Statistics</h2>
+    <div class="engagement-grid">
+      <div class="stat-card">
+        <p class="stat-label">Overall visitors</p>
+        <p class="stat-value" id="overall-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Overall likes</p>
+        <p class="stat-value" id="overall-like-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page visitors</p>
+        <p class="stat-value" id="page-visitor-count">--</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">This page likes</p>
+        <p class="stat-value" id="page-like-count">--</p>
+      </div>
+    </div>
+    <button id="like-btn" class="like-btn" type="button">Like this page</button>
+    <p id="engagement-message" class="engagement-message"></p>
+  </section>
+  <div class="contact-qr contact-qr-center">
+    <p class="contact-qr-label">Scan to save my contact</p>
+    <img src="../assets/contact-qr.png" alt="QR code to save Danny Teo Yong Song contact details" width="180" height="180">
+  </div>
+
+  <footer>
+    <p>&copy; 2019 teoyongsong.github.io. All rights reserved.</p>
+    <p class="footer-cross-link">Consulting &amp; professional profile: <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a></p>
+  </footer>
+  <script src="../visitor-stats.js"></script>
+</body>
+</html>
+
+<!--
+  Snippet to paste into blog.html (inside <ul class="blog-list">), newest first:
+  ---------------------------------------------------------------------------
+  <li class="blog-list-item">
+    <a href="blog/your-slug.html" class="blog-list-link">
+      <span class="blog-list-title">TITLE</span>
+      <span class="blog-list-meta"><time datetime="YYYY-MM-DD">Month YYYY</time> · CATEGORY</span>
+      <span class="blog-list-excerpt">One-line summary for the index.</span>
+    </a>
+  </li>
+-->

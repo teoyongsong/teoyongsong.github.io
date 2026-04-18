@@ -58,6 +58,18 @@ If any of these secrets are missing, the workflow is skipped.
 
 - `.github/workflows/notify-subscribers-on-new-project.yml` — runs on push to `main` / `master` when **`projects/**`** or **`index.html`** changes. Updating only `blog/**` or `blog.html` does **not** trigger it unless you extend the `paths` filter.
 
+### Welcome gift: Project Digest PDF (Resend + Actions)
+
+The **PDF is not committed** to the repo (see `.gitignore` for `private/*.pdf`). It is generated in CI from `scripts/build_project_digest_pdf.py` so there is **no public download URL** on GitHub Pages.
+
+1. Same **Resend** secrets as above: `RESEND_API_KEY`, `NOTIFY_FROM_EMAIL`.
+2. Optional: **`WEBHOOK_SECRET`** — random string; required for automated `repository_dispatch` triggers (see below).
+3. Workflow: **`.github/workflows/send-welcome-digest.yml`**
+   - **Manual:** Actions → *Send welcome digest (Project Digest PDF)* → Run workflow → enter the subscriber’s email.
+   - **Automated:** Call the GitHub API `repository_dispatch` with `event_type: new_subscriber` and `client_payload` (`email`, `secret`, optional `attach_pdf`). Typical pattern: Zapier/Make watches your inbox for FormSubmit messages and POSTs to GitHub.
+
+Full curl examples and security notes: **`.github/SUBSCRIBE_AUTOMATION.md`**.
+
 ---
 
 ## Repo structure
@@ -65,6 +77,11 @@ If any of these secrets are missing, the workflow is skipped.
 ```
 teoyongsong.github.io/
 ├── index.html              # Homepage (About, Live apps, Projects, Subscribe, Contact, stats)
+├── robots.txt              # Disallow /private/ (no PDF is stored there on purpose)
+├── requirements.txt        # fpdf2 — used by welcome-digest workflow
+├── scripts/
+│   └── build_project_digest_pdf.py  # Builds Project Digest PDF in GitHub Actions
+├── private/                # README only; PDFs are gitignored and built in CI
 ├── blog.html               # Blog index
 ├── style.css               # Global styles (layout, blog, projects, subscribe, engagement)
 ├── visitor-stats.js        # Visitor / like counters (counterapi.dev)

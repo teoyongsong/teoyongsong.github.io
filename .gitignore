@@ -1,2 +1,3 @@
-# Generated locally; PDF is built in CI (see .github/workflows/send-welcome-digest.yml)
+# Optional local PDF builds; canonical digest is tracked for version control
 private/*.pdf
+!private/project-digest.pdf

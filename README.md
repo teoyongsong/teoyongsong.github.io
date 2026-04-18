@@ -22,53 +22,19 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
   - HDB Resale Prices · [hdb-resale-prices.streamlit.app](https://hdb-resale-prices.streamlit.app/)
 - **Projects** — Responsive grid of project cards (up to three per row on desktop), each linking to a page under `projects/` with overview, tech, and links (repos, live apps, slides where relevant). Includes Once Upon App (storytelling MVP), RAG Studio (private-by-default), CNN waste classification (computer vision), Online Retail Customer Segmentation (unsupervised learning), HDB resale price predictor (ML), Python & ML quizzes, Quantum Dice, CISSP quizzes, Web Safety, this portfolio, SG Accounting, HDB Resale Prices (exploration app), Activity Tracker, Olist pipeline, LMS, and more.
 - **Blog** — [blog.html](https://teoyongsong.github.io/blog.html) lists posts; the first article is *From Data to Business Impact* (data lifecycle: collect → store → clean → analyze → apply → improve). New posts can be started from `blog/post-template.html`.
-- **Subscribe** — Email signup for “new project” notifications ([FormSubmit](https://formsubmit.co/); see below).
+- **Work together** — Homepage section with links to the consulting profile and email for project briefs.
 - **Contact** — WhatsApp, email, GitHub, LinkedIn.
 - **Visitor statistics** — Page and site visitor/like counts via [counterapi.dev](https://counterapi.dev/) (`visitor-stats.js`).
 
 ---
 
-## Project update emails (subscribers)
+## Project Digest PDF (optional local asset)
 
-Static GitHub Pages cannot send mail by itself. This repo uses:
+Regenerate the digest with:
 
-1. **Collect signups** — The homepage form posts to your inbox through **FormSubmit** (`teo_yongsong@yahoo.com.sg`). Addresses are not stored in git. The **first** time someone submits, FormSubmit may ask you to **confirm** that destination email (one-time).
-2. **Optional broadcast** — A GitHub Action can email subscribers via **Resend** when project-related files change (see below).
+`python3 scripts/build_project_digest_pdf.py private/project-digest.pdf`
 
-### FormSubmit (subscription form)
-
-- Form `action` is set in `index.html` to `https://formsubmit.co/teo_yongsong@yahoo.com.sg`.
-- To use a **different** inbox, change that address and complete FormSubmit activation for it.
-
-**Alternative:** You can switch to [Formspree](https://formspree.io/) or another form backend by changing the form `action` URL.
-
-### Resend + GitHub Actions (optional auto email)
-
-1. Sign up at [resend.com](https://resend.com/), verify a **sender domain** (or use their test sender while experimenting).
-2. Create an API key.
-3. In this repo: **Settings → Secrets and variables → Actions → New repository secret**:
-   - `RESEND_API_KEY` — Resend API key  
-   - `NOTIFY_FROM_EMAIL` — allowed sender, e.g. `Portfolio <updates@yourdomain.com>`  
-   - `SUBSCRIBER_EMAILS` — comma-separated list, e.g. `a@x.com,b@y.com` (the workflow sends **BCC** so recipients do not see each other).  
-   - When new people subscribe via FormSubmit, add their emails to this secret (or maintain your own list).
-
-If any of these secrets are missing, the workflow is skipped.
-
-### Workflow file
-
-- `.github/workflows/notify-subscribers-on-new-project.yml` — runs on push to `main` / `master` when **`projects/**`** or **`index.html`** changes. Updating only `blog/**` or `blog.html` does **not** trigger it unless you extend the `paths` filter.
-
-### Welcome gift: Project Digest PDF (Resend + Actions)
-
-The **PDF is not committed** to the repo (see `.gitignore` for `private/*.pdf`). It is generated in CI from `scripts/build_project_digest_pdf.py` so there is **no public download URL** on GitHub Pages.
-
-1. Same **Resend** secrets as above: `RESEND_API_KEY`, `NOTIFY_FROM_EMAIL`.
-2. Optional: **`WEBHOOK_SECRET`** — random string; required for automated `repository_dispatch` triggers (see below).
-3. Workflow: **`.github/workflows/send-welcome-digest.yml`**
-   - **Manual:** Actions → *Send welcome digest (Project Digest PDF)* → Run workflow → enter the subscriber’s email.
-   - **Automated:** Call the GitHub API `repository_dispatch` with `event_type: new_subscriber` and `client_payload` (`email`, `secret`, optional `attach_pdf`). Typical pattern: Zapier/Make watches your inbox for FormSubmit messages and POSTs to GitHub.
-
-Full curl examples and security notes: **`.github/SUBSCRIBE_AUTOMATION.md`**.
+The PDF is not linked from the site; see `private/README.md` if you use it as an attachment.
 
 ---
 
@@ -76,14 +42,16 @@ Full curl examples and security notes: **`.github/SUBSCRIBE_AUTOMATION.md`**.
 
 ```
 teoyongsong.github.io/
-├── index.html              # Homepage (About, Live apps, Projects, Subscribe, Contact, stats)
+├── index.html              # Homepage (About, Live apps, Projects, Work together, Contact, stats)
 ├── robots.txt              # Disallow /private/ (no PDF is stored there on purpose)
-├── requirements.txt        # fpdf2 — used by welcome-digest workflow
+├── requirements.txt        # fpdf2 — local / optional: build Project Digest PDF
 ├── scripts/
-│   └── build_project_digest_pdf.py  # Builds Project Digest PDF in GitHub Actions
-├── private/                # README only; PDFs are gitignored and built in CI
+│   └── build_project_digest_pdf.py
+├── private/
+│   ├── README.md
+│   └── project-digest.pdf  # Project Digest (regenerate via scripts/build_project_digest_pdf.py)
 ├── blog.html               # Blog index
-├── style.css               # Global styles (layout, blog, projects, subscribe, engagement)
+├── style.css               # Global styles (layout, blog, projects, engagement)
 ├── visitor-stats.js        # Visitor / like counters (counterapi.dev)
 ├── favicon.png
 ├── tys.jpg                 # Header photo

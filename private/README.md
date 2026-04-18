@@ -1,4 +1,3 @@
-# Private / not linked from the site
+# Private (not linked from the homepage)
 
-- **`project-digest.pdf` is not stored here.** It is built in GitHub Actions from `scripts/build_project_digest_pdf.py` and emailed via Resend so website visitors do not get a public download URL.
-- This folder exists so you can add `robots.txt` rules (`Disallow: /private/`) and keep optional non-public notes out of the main navigation.
+- **`project-digest.pdf`** — canonical **Project Digest** (regenerate with `python3 scripts/build_project_digest_pdf.py private/project-digest.pdf`). Not linked from the site; use for attachments when you send it manually.

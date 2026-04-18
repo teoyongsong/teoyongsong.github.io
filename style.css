@@ -576,6 +576,62 @@ section.section-wide {
   align-items: flex-start;
 }
 
+.work-email-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-email-label {
+  margin: 4px 0 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #1f2d44;
+}
+
+.work-email-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.work-email-address {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 10px 14px;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.92em;
+  color: #1f2d44;
+  background: #fff;
+  border: 1px solid #c5d3e8;
+  border-radius: 8px;
+  line-height: 1.4;
+  word-break: break-all;
+  user-select: all;
+}
+
+.conversion-work-mailto-hint {
+  margin: 10px 0 0;
+  font-size: 0.85em;
+  color: #666;
+  line-height: 1.45;
+}
+
+.conversion-work-mailto-hint a {
+  color: #1a5f9e;
+}
+
+.work-email-copy-status {
+  margin: 8px 0 0;
+  font-size: 0.9em;
+  color: #2d4566;
+  line-height: 1.45;
+}
+
+.work-email-copy-status[hidden] {
+  display: none;
+}
+
 .btn-work-primary,
 .btn-work-secondary {
   display: inline-block;
@@ -585,6 +641,17 @@ section.section-wide {
   font-size: 0.95em;
   text-decoration: none;
   text-align: center;
+}
+
+button.btn-work-primary,
+button.btn-work-secondary {
+  cursor: pointer;
+  font: inherit;
+}
+
+.btn-work-copy {
+  flex: 0 0 auto;
+  align-self: center;
 }
 
 .btn-work-primary {

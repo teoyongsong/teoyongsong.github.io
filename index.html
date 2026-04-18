@@ -238,7 +238,15 @@
         <p class="conversion-work-lead">Sprints, workshops, and advisory—same person as these builds, scoped for your team.</p>
         <div class="conversion-work-cta">
           <a class="btn btn-work-primary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Open consulting profile</a>
-          <a class="btn btn-work-secondary" href="mailto:teo_yongsong@yahoo.com.sg?subject=Project%20inquiry%20from%20portfolio">Email a project brief</a>
+          <div class="work-email-block">
+            <p class="work-email-label" id="work-email-label">Email for project briefs</p>
+            <div class="work-email-row" aria-labelledby="work-email-label">
+              <span class="work-email-address" id="work-email-display">teo_yongsong@yahoo.com.sg</span>
+              <button type="button" class="btn btn-work-secondary btn-work-copy" id="copy-work-email-btn" aria-describedby="copy-work-email-status">Copy email address</button>
+            </div>
+            <p class="conversion-work-mailto-hint"><a href="mailto:teo_yongsong@yahoo.com.sg?subject=Project%20inquiry%20from%20portfolio">Open in your email app</a> instead (may ask which app to use).</p>
+            <p class="work-email-copy-status" id="copy-work-email-status" role="status" aria-live="polite" hidden></p>
+          </div>
         </div>
         <p class="conversion-work-note">Prefer chat? Use <a href="#contact">Contact</a> below for WhatsApp and social links.</p>
       </div>
@@ -287,5 +295,47 @@
     <p class="footer-cross-link">Consulting &amp; professional profile: <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a></p>
   </footer>
   <script src="visitor-stats.js"></script>
+  <script>
+    (function () {
+      var email = 'teo_yongsong@yahoo.com.sg';
+      var btn = document.getElementById('copy-work-email-btn');
+      var statusEl = document.getElementById('copy-work-email-status');
+      if (!btn || !statusEl) return;
+
+      function copyFallback(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('aria-hidden', 'true');
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          return document.execCommand('copy');
+        } finally {
+          document.body.removeChild(ta);
+        }
+      }
+
+      function showFeedback(ok) {
+        statusEl.hidden = false;
+        statusEl.textContent = ok
+          ? 'Copied. Paste the address into your email app when you are ready.'
+          : 'Copy did not work — tap the address above, select all, then copy (Ctrl+C or Cmd+C).';
+      }
+
+      btn.addEventListener('click', function () {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(email).then(function () {
+            showFeedback(true);
+          }).catch(function () {
+            showFeedback(copyFallback(email));
+          });
+        } else {
+          showFeedback(copyFallback(email));
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

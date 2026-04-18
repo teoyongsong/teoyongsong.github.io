@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Danny Teo's portfolio of practical AI, data, and software projects with live demos, technical write-ups, and contact links.">
+  <meta name="description" content="Danny Teo — consultant and builder: practical AI/ML prototypes, live demos, and sprint-style delivery from idea to working app. Portfolio, blog, and contact.">
   <meta name="keywords" content="Danny Teo, AI portfolio, machine learning, data projects, Streamlit apps, software developer">
   <title>Danny Teo's Portfolio</title>
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -15,16 +15,17 @@
       <img src="tys.jpg" alt="Danny Teo Yong Song" class="header-photo">
       <div class="header-text">
         <h1>Danny Teo Yong Song</h1>
-        <p>Software Developer | Data Enthusiast | Tech Explorer</p>
+        <p>Consultant · Builder · AI, data &amp; software</p>
       </div>
     </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#portfolio-consulting-bridge">Portfolio vs consulting</a>
     <a href="#featured-projects">Featured</a>
-    <a href="#live-apps">Live apps</a>
-    <a href="#projects">Projects</a>
+    <a href="#other-projects">Other projects</a>
     <a href="blog.html">Blog</a>
     <a href="#subscribe">Subscribe</a>
     <a href="#contact">Contact</a>
@@ -34,7 +35,8 @@
     <div class="hero-content">
       <p class="hero-kicker">AI • Data • Software</p>
       <h2>Building practical apps and sharing what works.</h2>
-      <p class="hero-lead">I design hands-on AI/data prototypes, convert them into usable tools, and share implementation insights through project pages and blog posts.</p>
+      <p class="hero-hook">I help teams move from ideas to working prototypes in days—then iterate with real users and ship.</p>
+      <p class="hero-lead">Hands-on AI and data builds, usable tools, and write-ups so you can see what worked and reuse the patterns.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#featured-projects">View featured projects</a>
         <a class="btn btn-secondary" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Speaking, training & consulting</a>
@@ -44,43 +46,111 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Danny Teo — a management consultant and builder who works at the intersection of software, data, and capability development. I started with business transformation work, then expanded into building practical tools in AI/ML, security, and analytics so teams can move from ideas to implementation faster.</p>
-    <p>This site is my technical portfolio: live demos, project breakdowns, and implementation notes. You will find small MVPs, applied machine-learning prototypes, and workflow-focused tools that solve real use cases.</p>
-    <p class="about-professional-site">For <strong>speaking, training, consulting</strong>, and a fuller professional profile, visit <a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a>.</p>
+    <p class="about-hook">Consultant and builder at the intersection of strategy, software, and data—not a generic dev-for-hire: I run short, outcome-focused sprints that end in something you can click, test, or pilot.</p>
+    <p>Hello! I’m Danny Teo. I started in business transformation, then leaned into shipping practical tools in AI/ML, security, and analytics so teams get past slides and into working systems.</p>
+    <p><strong>This site</strong> is the technical portfolio: live demos, project pages, and blog notes. <strong><a href="https://dannyteo.github.io/" target="_blank" rel="noopener">dannyteo.github.io</a></strong> is the consulting and professional profile—speaking, training, and engagements. Same person; different entry points depending on what you need.</p>
   </section>
 
-  <section id="featured-projects">
-    <h2>Featured Projects</h2>
-    <p class="section-lead">A quick start if you are visiting for the first time.</p>
-    <div class="featured-grid">
-      <a href="projects/rag-studio.html" class="project-card featured-card">
-        <span class="project-tag">RAG / LLM</span>
-        <h3>RAG Studio (Private-by-Default)</h3>
-        <p>Local-first retrieval-augmented generation app with Streamlit, FastAPI, and CLI interfaces.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
-      <a href="projects/hdb-price-predictor.html" class="project-card featured-card">
-        <span class="project-tag">ML / Tabular Data</span>
-        <h3>HDB resale price predictor</h3>
-        <p>Supervised-learning workflow from public HDB data to model bundle deployment in Streamlit.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
-      <a href="projects/cnn-waste.html" class="project-card featured-card">
-        <span class="project-tag">Computer Vision</span>
-        <h3>CNN waste classification</h3>
-        <p>PyTorch image-classification project with deployable Streamlit inference for demo use.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
+  <section id="capabilities" class="capabilities-section section-wide" aria-labelledby="capabilities-heading">
+    <h2 id="capabilities-heading">Capabilities at a glance</h2>
+    <p class="section-lead">Relative emphasis across domains (illustrative—not a scorecard). Technical depth and business-facing delivery sit side by side.</p>
+    <div class="capabilities-layout">
+      <figure class="radar-figure">
+        <svg class="radar-chart" viewBox="0 0 200 200" role="img" aria-labelledby="radar-title radar-desc">
+          <title id="radar-title">Capability emphasis across five domains</title>
+          <desc id="radar-desc">Radar chart showing relative strength in AI and LLM, ML and data, security, software engineering, and consulting.</desc>
+          <polygon class="radar-grid" points="100,80 119.0,93.8 111.8,116.2 88.2,116.2 81.0,93.8" fill="none" stroke="#d8dee8" stroke-width="1"/>
+          <polygon class="radar-grid" points="100,60 138.0,87.6 123.5,132.4 76.5,132.4 62.0,87.6" fill="none" stroke="#d8dee8" stroke-width="1"/>
+          <polygon class="radar-grid" points="100,40 157.1,81.5 135.3,148.5 64.7,148.5 42.9,81.5" fill="none" stroke="#d8dee8" stroke-width="1"/>
+          <polygon class="radar-grid" points="100,20 176.1,75.3 147.0,164.7 53.0,164.7 23.9,75.3" fill="none" stroke="#c5ced9" stroke-width="1"/>
+          <line class="radar-axis" x1="100" y1="100" x2="100" y2="20" stroke="#c5ced9" stroke-width="1"/>
+          <line class="radar-axis" x1="100" y1="100" x2="176.1" y2="75.3" stroke="#c5ced9" stroke-width="1"/>
+          <line class="radar-axis" x1="100" y1="100" x2="147.0" y2="164.7" stroke="#c5ced9" stroke-width="1"/>
+          <line class="radar-axis" x1="100" y1="100" x2="53.0" y2="164.7" stroke="#c5ced9" stroke-width="1"/>
+          <line class="radar-axis" x1="100" y1="100" x2="23.9" y2="75.3" stroke="#c5ced9" stroke-width="1"/>
+          <polygon class="radar-area" points="100.0,28.0 170.0,77.3 135.3,148.5 58.6,157.0 35.3,79.0" fill="rgba(45, 69, 102, 0.25)" stroke="#2d4566" stroke-width="2"/>
+        </svg>
+        <figcaption class="radar-caption">Five domains: AI &amp; LLM, ML &amp; data, security, engineering, consulting.</figcaption>
+      </figure>
+      <ul class="capability-legend">
+        <li><span class="cap-dot cap-ai"></span> AI &amp; LLM <span class="cap-pct">90%</span></li>
+        <li><span class="cap-dot cap-ml"></span> ML &amp; data <span class="cap-pct">92%</span></li>
+        <li><span class="cap-dot cap-sec"></span> Security <span class="cap-pct">75%</span></li>
+        <li><span class="cap-dot cap-eng"></span> Software engineering <span class="cap-pct">88%</span></li>
+        <li><span class="cap-dot cap-con"></span> Consulting &amp; delivery <span class="cap-pct">85%</span></li>
+      </ul>
+    </div>
+    <p class="capabilities-footnote">For stakeholders who want <strong>business impact first</strong>, start with outcomes on each project card; expand into technical detail when you need it.</p>
+  </section>
+
+  <section id="portfolio-consulting-bridge" class="bridge-section section-wide" aria-labelledby="bridge-heading">
+    <h2 id="bridge-heading">Two sites, one thread</h2>
+    <p class="section-lead">Use this page for builds and demos; use the professional site when you need talks, training, or a formal consulting conversation.</p>
+    <div class="bridge-grid">
+      <div class="bridge-card bridge-card-portfolio">
+        <h3 class="bridge-card-title">Portfolio · teoyongsong.github.io</h3>
+        <p class="bridge-card-lead">Code-forward</p>
+        <ul>
+          <li>Live Streamlit apps and project write-ups</li>
+          <li>Blog: implementation notes and learning resources</li>
+          <li>Open repos and reproducible experiments</li>
+        </ul>
+        <p class="bridge-card-cta"><a class="btn btn-bridge" href="#featured-projects">Explore featured projects</a></p>
+      </div>
+      <div class="bridge-card bridge-card-consulting">
+        <h3 class="bridge-card-title">Consulting · dannyteo.github.io</h3>
+        <p class="bridge-card-lead">Engagement-forward</p>
+        <ul>
+          <li>Speaking, workshops, and capability building</li>
+          <li>Advisory and transformation context</li>
+          <li>Fuller professional profile and contact paths</li>
+        </ul>
+        <p class="bridge-card-cta"><a class="btn btn-bridge btn-bridge-alt" href="https://dannyteo.github.io/" target="_blank" rel="noopener">Open professional site</a></p>
+      </div>
     </div>
   </section>
 
-  <section id="highlights" class="highlights">
-    <h2>Professional Highlights</h2>
-    <ul class="highlights-list">
-      <li><strong>Consultant + builder</strong> — combines transformation advisory with working software prototypes.</li>
-      <li><strong>Community orientation</strong> — shares practical project write-ups, demo apps, and learning resources.</li>
-      <li><strong>Leadership & training</strong> — active in speaking, coaching, and capability-building initiatives.</li>
-    </ul>
+  <section id="featured-projects">
+    <h2>Featured projects</h2>
+    <p class="section-lead">Flagship builds with live demos—start here if you want proof, not just descriptions.</p>
+    <div class="featured-grid featured-grid-four">
+      <article class="project-card featured-card">
+        <span class="project-tag">RAG / LLM</span>
+        <h3>RAG Studio (Private-by-Default)</h3>
+        <p>Local-first retrieval-augmented generation with Streamlit, FastAPI, and CLI interfaces.</p>
+        <div class="featured-card-actions">
+          <a class="btn btn-featured btn-featured-primary" href="https://rag-model.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
+          <a class="btn btn-featured btn-featured-secondary" href="projects/rag-studio.html">View project</a>
+        </div>
+      </article>
+      <article class="project-card featured-card">
+        <span class="project-tag">ML / Tabular Data</span>
+        <h3>HDB resale price predictor</h3>
+        <p>Supervised learning on public HDB data to a deployable model bundle in Streamlit.</p>
+        <div class="featured-card-actions">
+          <a class="btn btn-featured btn-featured-primary" href="https://hdb-prices-predictor.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
+          <a class="btn btn-featured btn-featured-secondary" href="projects/hdb-price-predictor.html">View project</a>
+        </div>
+      </article>
+      <article class="project-card featured-card">
+        <span class="project-tag">Computer vision</span>
+        <h3>CNN waste classification</h3>
+        <p>PyTorch image classification with Streamlit inference for instant demos.</p>
+        <div class="featured-card-actions">
+          <a class="btn btn-featured btn-featured-primary" href="https://cnn-waste.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
+          <a class="btn btn-featured btn-featured-secondary" href="projects/cnn-waste.html">View project</a>
+        </div>
+      </article>
+      <article class="project-card featured-card">
+        <span class="project-tag">Product / UX</span>
+        <h3>Once Upon App (Storytelling MVP)</h3>
+        <p>Personalized storytelling for families—profiles, structured sections, and a local story library.</p>
+        <div class="featured-card-actions">
+          <a class="btn btn-featured btn-featured-primary" href="https://story-telling.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
+          <a class="btn btn-featured btn-featured-secondary" href="projects/once-upon-storytelling.html">View project</a>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section id="latest-insights">
@@ -93,80 +163,13 @@
     </ul>
   </section>
 
-  <section id="live-apps">
-    <h2>Live apps available</h2>
-    <p class="live-apps-lead">These projects run in the browser — open them anytime without cloning a repo or installing dependencies.</p>
-    <ul class="live-apps-list">
-      <li>
-        <strong>Once Upon App (Storytelling MVP)</strong> — beginner-friendly personalized storytelling app with child profile inputs, structured story sections, and local story library in Streamlit.
-        <span class="live-apps-links"><a href="https://story-telling.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/once-upon-storytelling.html">Details</a></span>
-      </li>
-      <li>
-        <strong>RAG Studio (Private-by-Default)</strong> — retrieval-augmented generation with ChromaDB, SentenceTransformers, and Streamlit UI for local/private document Q&amp;A.
-        <span class="live-apps-links"><a href="https://rag-model.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/rag-studio.html">Details</a></span>
-      </li>
-      <li>
-        <strong>CNN waste classification</strong> — image classification with a trained CNN; upload a photo in Streamlit to see predicted waste categories.
-        <span class="live-apps-links"><a href="https://cnn-waste.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/cnn-waste.html">Details</a></span>
-      </li>
-      <li>
-        <strong>Online Retail Customer Segmentation</strong> — RFM-based clustering on 525k+ transactions with KMeans baseline, GMM comparison, and segment-level business actions.
-        <span class="live-apps-links"><a href="https://teoyongsong.github.io/unsupervised-clustering-online-retail/" target="_blank" rel="noopener">Open app</a> · <a href="projects/customer-segmentation.html">Details</a></span>
-      </li>
-      <li>
-        <strong>HDB resale price predictor</strong> — supervised ML on data.gov.sg resale transactions; Streamlit estimates from flat attributes and trained model bundle.
-        <span class="live-apps-links"><a href="https://hdb-prices-predictor.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/hdb-price-predictor.html">Details</a></span>
-      </li>
-      <li>
-        <strong>Python &amp; ML practice quizzes</strong> — seven topics, ten random questions per attempt from a bank of thirty; HTML/JS quiz embedded in Streamlit.
-        <span class="live-apps-links"><a href="https://python-tests.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/python-test.html">Details</a></span>
-      </li>
-      <li>
-        <strong>Quantum Dice</strong> — Qiskit simulation of two fair dice: run batches, histogram, and optional circuit view in Streamlit.
-        <span class="live-apps-links"><a href="https://quqntumdice.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/quqntum-dice.html">Details</a></span>
-      </li>
-      <li>
-        <strong>CISSP Domain Quizzes</strong> — eight-domain CISSP practice with 2024 weights, CAT-style timing, and full exam mode.
-        <span class="live-apps-links"><a href="https://cissp-quiz.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/cissp-quiz.html">Details</a></span>
-      </li>
-      <li>
-        <strong>Web Safety Checker</strong> — web, email, and network safety checks with PDF reports.
-        <span class="live-apps-links"><a href="https://web-safety.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/web-safety.html">Details</a></span>
-      </li>
-      <li>
-        <strong>HDB Resale Prices</strong> — explore Singapore HDB resale data by town, flat type, and period.
-        <span class="live-apps-links"><a href="https://hdb-resale-prices.streamlit.app/" target="_blank" rel="noopener">Open app</a> · <a href="projects/hdb-resale-prices.html">Details</a></span>
-      </li>
-    </ul>
-    <p class="live-apps-more">More projects below are described in <a href="#projects">Projects</a>; some are pipelines or repos without a public live URL.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="other-projects">
+    <h2>Other projects</h2>
+    <p class="section-lead">Secondary builds, experiments, and repos—still real work, with more detail on each page. Several include live apps; some are pipelines or local-only.</p>
     <div class="project-grid">
-      <a href="projects/once-upon-storytelling.html" class="project-card">
-        <h3>Once Upon App (Storytelling MVP)</h3>
-        <p>Streamlit storytelling app with configurable child/story parameters, age-aware style, chapter prompts, and local JSON story history.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
-      <a href="projects/rag-studio.html" class="project-card">
-        <h3>RAG Studio (Private-by-Default)</h3>
-        <p>Local-first RAG app with CLI, FastAPI web UI, and Streamlit UI using ChromaDB retrieval and local/OpenAI generation backends.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
-      <a href="projects/cnn-waste.html" class="project-card">
-        <h3>CNN waste classification</h3>
-        <p>PyTorch CNN for waste image classification: notebook experiments, saved weights, and a Streamlit app for inference on Streamlit Cloud.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
       <a href="projects/customer-segmentation.html" class="project-card">
         <h3>Online Retail Customer Segmentation</h3>
         <p>Unsupervised learning project using RFM features: KMeans baseline + GMM comparison, with segment profiling and recommended CRM actions.</p>
-        <span class="project-link">View project &rarr;</span>
-      </a>
-      <a href="projects/hdb-price-predictor.html" class="project-card">
-        <h3>HDB resale price predictor</h3>
-        <p>Supervised ML on official HDB resale data: train regressors, export a model bundle, Streamlit + optional Flask UI for indicative resale estimates.</p>
         <span class="project-link">View project &rarr;</span>
       </a>
       <a href="projects/python-test.html" class="project-card">
@@ -223,25 +226,29 @@
   </section>
 
   <section id="subscribe">
-    <h2>Get notified of new projects</h2>
+    <h2>Get the Project Digest + new project alerts</h2>
     <p class="subscribe-lead">
-      Leave your email if you want a short note when a new project is added to this portfolio.
-      Your address is used only for that purpose and is not shown on the site.
+      Subscribe for a short email when new work lands here. Opt in below to receive the <strong>Project Digest</strong> (PDF)—a curated one-pager: flagship demos, how they map to business outcomes, and “Top 5 AI/ML-style prototypes for impact” you can show stakeholders.
+      Your address is used only for this list and is not shown on the site.
     </p>
     <!-- FormSubmit: posts to your inbox (first time you must activate the address at formsubmit.co) -->
-    <form class="subscribe-form" action="https://formsubmit.co/teo_yongsong@yahoo.com.sg" method="POST">
+    <form class="subscribe-form subscribe-form-stack" action="https://formsubmit.co/teo_yongsong@yahoo.com.sg" method="POST">
       <label class="sr-only" for="subscribe-email">Email</label>
       <input id="subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
       <label class="sr-only" for="subscribe-name">Name (optional)</label>
       <input id="subscribe-name" type="text" name="name" placeholder="Name (optional)" autocomplete="name">
-      <input type="hidden" name="_subject" value="Portfolio: subscribe to new projects">
+      <label class="subscribe-digest-opt">
+        <input type="checkbox" name="send_project_digest_pdf" value="yes" checked>
+        Send me the Project Digest (PDF) and the “Top 5” overview
+      </label>
+      <input type="hidden" name="_subject" value="Portfolio: subscribe + Project Digest request">
       <input type="hidden" name="_next" value="https://teoyongsong.github.io/?subscribed=1#subscribe">
       <input type="hidden" name="_captcha" value="true">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="subscribe-honeypot" aria-hidden="true">
       <button type="submit">Subscribe</button>
     </form>
     <p class="subscribe-note">
-      Submissions go to the site owner’s private inbox only. The first time you use FormSubmit, you may need to confirm your email address on their site.
+      Submissions go to the site owner’s private inbox only. If you opt in to the digest, expect a reply with the PDF link (or attachment) after your address is confirmed—no spam, no resale. The first time you use FormSubmit, you may need to confirm your email on their site.
       For automated “new project” emails to a mailing list, configure Resend + GitHub Actions in the repo README.
     </p>
   </section>

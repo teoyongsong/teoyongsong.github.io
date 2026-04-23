@@ -1794,6 +1794,7 @@ footer .footer-cross-link {
   }
   
   .suggested-prompts {
+    display: none; /* Hide on mobile to save space and improve scrollability */
     padding: 0 18px 12px;
     gap: 6px;
     flex-shrink: 0;

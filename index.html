@@ -362,9 +362,12 @@
   </script>
   <!-- SiteChat Professional Widget -->
 <!-- Advanced SiteChat Widget -->
+<!-- Advanced SiteChat Widget with Auto Domain Detection -->
 <script>
-  const CHATBOT_URL = "https://webapp-chatbot.streamlit.app/?embed=true";
-
+  // Automatically detect current website domain
+  const currentDomain = window.location.hostname;
+  const chatbotUrl = `https://webapp-chatbot.streamlit.app/?domain=${currentDomain}`;
+  
   const widgetHTML = `
     <div style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:system-ui,sans-serif;">
       <div onclick="toggleSiteChat()" 
@@ -379,12 +382,12 @@
           <div style="background:white;color:#1e40af;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;">🤖</div>
           <div>
             <div style="font-weight:600;">SiteChat</div>
-            <div style="font-size:12px;opacity:0.85;">AI Assistant • This Website Only</div>
+            <div style="font-size:12px;opacity:0.85;">for ${currentDomain}</div>
           </div>
         </div>
         <div onclick="toggleSiteChat()" style="cursor:pointer;padding:6px 12px;border-radius:9999px;background:rgba(255,255,255,0.2);">✕</div>
       </div>
-      <iframe src="${CHATBOT_URL}" style="width:100%;height:calc(100% - 68px);border:none;" allowfullscreen></iframe>
+      <iframe src="${chatbotUrl}" style="width:100%;height:calc(100% - 68px);border:none;" allowfullscreen></iframe>
     </div>
   `;
 
@@ -395,7 +398,6 @@
     modal.style.display = modal.style.display === 'none' || modal.style.display === '' ? 'block' : 'none';
   };
 
-  // Close when pressing ESC
   document.addEventListener('keydown', function(e) {
     if (e.key === "Escape") {
       document.getElementById('sitechat-modal').style.display = 'none';

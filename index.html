@@ -364,24 +364,24 @@
 <!-- Advanced SiteChat Widget -->
 <!-- Advanced SiteChat Widget with Auto Domain Detection -->
 <!-- SiteChat Widget - Auto Domain Detection -->
+<!-- Final Fixed SiteChat Widget -->
 <script>
-  // Automatically detect current website domain
   const currentDomain = window.location.hostname;
   const chatbotUrl = `https://webapp-chatbot.streamlit.app/?domain=${currentDomain}`;
   
   const widgetHTML = `
-    <div style="position:fixed;bottom:24px;right:24px;z-index:9999;">
-      <div onclick="toggleChat()" style="width:62px;height:62px;background:linear-gradient(135deg,#2563eb,#1e40af);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.3);border:3px solid white;">
-        <span style="font-size:28px;">🤖</span>
+    <div style="position:fixed;bottom:20px;right:20px;z-index:9999;">
+      <div onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#2563eb,#1e40af);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.3);border:3px solid white;">
+        <span style="font-size:26px;">🤖</span>
       </div>
     </div>
 
-    <div id="chat-modal" style="display:none;position:fixed;bottom:100px;right:24px;width:400px;height:620px;background:white;border-radius:20px;box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.4);overflow:hidden;z-index:10000;border:1px solid #e2e8f0;">
-      <div style="background:linear-gradient(135deg,#1e40af,#2563eb);color:white;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
+    <div id="chat-modal" style="display:none;position:fixed;bottom:90px;right:20px;width:380px;height:560px;background:white;border-radius:16px;box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.4);overflow:hidden;z-index:10000;border:1px solid #e2e8f0;">
+      <div style="background:linear-gradient(135deg,#1e40af,#2563eb);color:white;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
         <div style="font-weight:600;">SiteChat</div>
-        <div onclick="toggleChat()" style="cursor:pointer;font-size:18px;">✕</div>
+        <div onclick="toggleChat()" style="cursor:pointer;font-size:18px;padding:2px 8px;">✕</div>
       </div>
-      <iframe src="${chatbotUrl}" style="width:100%;height:calc(100% - 52px);border:none;" allowfullscreen></iframe>
+      <iframe src="${chatbotUrl}" style="width:100%;height:calc(100% - 48px);border:none;" allowfullscreen></iframe>
     </div>
   `;
 
@@ -391,12 +391,6 @@
     const modal = document.getElementById('chat-modal');
     modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
   };
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === "Escape") {
-      document.getElementById('chat-modal').style.display = 'none';
-    }
-  });
 </script>
 </body>
 </html>

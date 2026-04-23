@@ -1600,7 +1600,8 @@ footer .footer-cross-link {
 
 .chat-messages {
   flex: 1;
-  padding: 24px 20px;
+  min-height: 0; /* Critical for flexbox scrolling */
+  padding: 20px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1743,9 +1744,10 @@ footer .footer-cross-link {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 0 20px 16px;
+  padding: 0 20px 14px;
   background: #f8fafc;
   border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
 }
 
 .suggested-prompt {
@@ -1775,6 +1777,32 @@ footer .footer-cross-link {
     border-radius: 0;
     max-width: none;
     box-shadow: none;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-messages {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+  
+  .chat-input-area {
+    padding: 12px 18px;
+  }
+  
+  .suggested-prompts {
+    padding: 0 18px 12px;
+    gap: 6px;
+  }
+  
+  .suggested-prompt {
+    font-size: 0.78em;
+    padding: 5px 12px;
+  }
+  
+  .chat-disclaimer {
+    padding: 10px 18px;
+    font-size: 0.68em;
   }
   
   .chat-toggle {

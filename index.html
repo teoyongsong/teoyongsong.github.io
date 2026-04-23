@@ -360,37 +360,239 @@
       });
     })();
   </script>
-  <!-- SiteChat Professional Widget -->
-<!-- Advanced SiteChat Widget -->
-<!-- Advanced SiteChat Widget with Auto Domain Detection -->
-<!-- SiteChat Widget - Auto Domain Detection -->
-<!-- Final Fixed SiteChat Widget -->
-<script>
-  const currentDomain = window.location.hostname;
-  const chatbotUrl = `https://webapp-chatbot.streamlit.app/?domain=${currentDomain}`;
-  
-  const widgetHTML = `
-    <div style="position:fixed;bottom:20px;right:20px;z-index:9999;">
-      <div onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#2563eb,#1e40af);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.3);border:3px solid white;">
-        <span style="font-size:26px;">🤖</span>
+
+  <!-- AI Chatbot -->
+  <div class="chatbot-container" id="chatbot-container">
+    <button id="chat-toggle" class="chat-toggle" aria-label="Open AI assistant">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2z" />
+      </svg>
+      Ask AI about site
+    </button>
+    
+    <div id="chat-window" class="chat-window hidden">
+      <div class="chat-header">
+        <div class="chat-title">Portfolio AI Assistant</div>
+        <button id="chat-close" class="chat-close" aria-label="Close chat">×</button>
+      </div>
+      
+      <div id="chat-messages" class="chat-messages">
+        <!-- Messages populated by JS -->
+      </div>
+      
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type your question about this website..." autocomplete="off">
+        <button id="chat-send" aria-label="Send message">↑</button>
+      </div>
+      
+      <div class="chat-disclaimer">
+        I only answer questions about teoyongsong.github.io, Danny's work, projects, and blog.
       </div>
     </div>
+  </div>
 
-    <div id="chat-modal" style="display:none;position:fixed;bottom:90px;right:20px;width:380px;height:560px;background:white;border-radius:16px;box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.4);overflow:hidden;z-index:10000;border:1px solid #e2e8f0;">
-      <div style="background:linear-gradient(135deg,#1e40af,#2563eb);color:white;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
-        <div style="font-weight:600;">SiteChat</div>
-        <div onclick="toggleChat()" style="cursor:pointer;font-size:18px;padding:2px 8px;">✕</div>
-      </div>
-      <iframe src="${chatbotUrl}" style="width:100%;height:calc(100% - 48px);border:none;" allowfullscreen></iframe>
-    </div>
-  `;
+  <script>
+    // AI Chatbot Implementation
+    (function() {
+      'use strict';
+      
+      const chatbotContainer = document.getElementById('chatbot-container');
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatWindow = document.getElementById('chat-window');
+      const chatMessages = document.getElementById('chat-messages');
+      const chatInput = document.getElementById('chat-input');
+      const chatSend = document.getElementById('chat-send');
+      const chatClose = document.getElementById('chat-close');
+      
+      let isOpen = false;
+      
+      // Comprehensive knowledge base for the website
+      const knowledgeBase = [
+        {
+          keywords: ['who', 'danny', 'teo', 'yourself', 'about', 'introduce'],
+          response: "I'm an AI assistant for Danny Teo Yong Song's portfolio at teoyongsong.github.io. Danny is a consultant, builder, and AI/ML specialist who helps teams create working prototypes in 3-day sprints. He focuses on AI, data, security, and product storytelling through live demos rather than slideware."
+        },
+        {
+          keywords: ['project', 'featured', 'portfolio', 'rag', 'hdb', 'cnn', 'waste', 'story', 'once upon'],
+          response: "Danny's flagship projects include:\n• RAG Studio: Private-by-default local RAG for secure document Q&A\n• HDB Resale Price Predictor: ML model using public Singapore data\n• CNN Waste Classification: Computer vision for recycling/sorting\n• Once Upon App: Personalized storytelling MVP for families\n\nSee the Featured Projects section above or visit individual project pages for live demos and details."
+        },
+        {
+          keywords: ['blog', 'insight', 'article', 'how i built', 'website', 'github pages'],
+          response: "The latest insight is 'How I Built My Personal Website with GitHub Pages' (April 2026). Other posts cover machine learning fundamentals and turning data into business impact. The blog demonstrates lightweight HTML/CSS/JS development — the same stack as this site. Check the Latest Insight section or blog.html."
+        },
+        {
+          keywords: ['contact', 'email', 'whatsapp', 'work together', 'consulting', 'reach'],
+          response: "Contact Danny via:\n• WhatsApp: +65 9685 2990 (link in Contact section)\n• Email: teo_yongsong@yahoo.com.sg\n• GitHub: github.com/teoyongsong\n• LinkedIn: linkedin.com/in/teoyongsong\n\nFor formal consulting, workshops, or speaking: https://dannyteo.github.io/"
+        },
+        {
+          keywords: ['sprint', 'prototype', '3 day', '3-day', 'help', 'consult'],
+          response: "Danny specializes in 3-day sprints to turn ideas into functional prototypes quickly. This allows teams to validate concepts with real users before committing to larger projects. His work spans AI/ML applications, data pipelines, security tools, and storytelling interfaces. The 'Work together' section has more details."
+        },
+        {
+          keywords: ['capability', 'skill', 'ai', 'ml', 'data', 'security', 'radar'],
+          response: "Core capabilities (from the radar chart): AI/ML (~90%), Data, Security, Consulting, Storytelling, and Engineering. The site showcases live apps and honest write-ups rather than marketing decks. See the Hero section for the capability snapshot."
+        },
+        {
+          keywords: ['thank', 'thanks', 'hello', 'hi', 'hey', 'greet'],
+          response: "Hello! I'm happy to help you explore Danny Teo's portfolio. What would you like to know about his AI/ML projects, the blog, how this site was built, or how to work together?"
+        }
+      ];
+      
+      const siteRelatedKeywords = [
+        'danny', 'teo', 'portfolio', 'website', 'project', 'ai', 'ml', 'machine learning', 
+        'rag', 'hdb', 'cnn', 'waste', 'storytelling', 'blog', 'github', 'sprint', 'prototype',
+        'consulting', 'data', 'security', 'contact', 'email', 'whatsapp', 'radar', 'insight'
+      ];
+      
+      function isSiteRelated(message) {
+        const lowerMsg = message.toLowerCase();
+        return siteRelatedKeywords.some(keyword => lowerMsg.includes(keyword));
+      }
+      
+      function getBestResponse(userMessage) {
+        const lowerMessage = userMessage.toLowerCase().trim();
+        
+        // Check for exact matches in knowledge base
+        for (let entry of knowledgeBase) {
+          if (entry.keywords.some(keyword => lowerMessage.includes(keyword))) {
+            return entry.response;
+          }
+        }
+        
+        // If it seems related to the site but no exact match, give a helpful general response
+        if (isSiteRelated(lowerMessage)) {
+          return "This website showcases Danny Teo Yong Song's work in AI, machine learning, data projects, and rapid prototyping. You can explore the Featured Projects, read the latest insight on building this site with GitHub Pages, or check the Contact section. What specific aspect would you like to know more about?";
+        }
+        
+        // Polite refusal for off-topic questions - this fulfills the main requirement
+        return "I'm sorry, but as an AI assistant for this website, I can only answer questions about teoyongsong.github.io, Danny Teo's portfolio, his AI/ML projects, blog posts, or how to collaborate with him. Could you please rephrase your question to be about the content on this site?";
+      }
+      
+      function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        
+        // Support multi-line responses by converting \n to <br>
+        const formattedText = text.replace(/\n/g, '<br>');
+        messageDiv.innerHTML = formattedText;
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return messageDiv;
+      }
+      
+      function showTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'typing-indicator';
+        typingDiv.id = 'typing-indicator';
+        typingDiv.innerHTML = `
+          <div class="typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+          <span style="font-size:0.8em; color:#64748b; margin-left:8px;">thinking...</span>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return typingDiv;
+      }
+      
+      function removeTypingIndicator() {
+        const typing = document.getElementById('typing-indicator');
+        if (typing) typing.remove();
+      }
+      
+      async function handleUserMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        
+        // Add user message
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // Show typing indicator
+        const typingIndicator = showTypingIndicator();
+        
+        // Simulate AI thinking time (makes it feel more real)
+        await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+        
+        removeTypingIndicator();
+        
+        // Get and add bot response
+        const response = getBestResponse(message);
+        addMessage(response);
+      }
+      
+      function toggleChat() {
+        isOpen = !isOpen;
+        
+        if (isOpen) {
+          chatWindow.classList.remove('hidden');
+          chatToggle.style.display = 'none';
+          
+          // Add welcome message if first time
+          if (chatMessages.children.length === 0) {
+            setTimeout(() => {
+              addMessage("Hello! I'm the Portfolio AI Assistant. I can only answer questions specifically about this website (teoyongsong.github.io), Danny Teo's projects, blog, capabilities, and how to work with him.\n\nWhat would you like to know?");
+            }, 300);
+          }
+          chatInput.focus();
+        } else {
+          chatWindow.classList.add('hidden');
+          chatToggle.style.display = 'flex';
+        }
+      }
+      
+      function initChatbot() {
+        // Toggle button
+        chatToggle.addEventListener('click', toggleChat);
+        
+        // Close button
+        chatClose.addEventListener('click', () => {
+          isOpen = true; // force close
+          toggleChat();
+        });
+        
+        // Send button
+        chatSend.addEventListener('click', handleUserMessage);
+        
+        // Enter key support
+        chatInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            handleUserMessage();
+          }
+        });
+        
+        // Click outside to close (optional UX)
+        document.addEventListener('click', function(e) {
+          if (isOpen && !chatWindow.contains(e.target) && !chatToggle.contains(e.target)) {
+            isOpen = true;
+            toggleChat();
+          }
+        });
+        
+        // Make chat toggle keyboard accessible
+        chatToggle.setAttribute('tabindex', '0');
+        chatToggle.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleChat();
+          }
+        });
+        
+        console.log('%c🤖 Portfolio AI Chatbot initialized. It politely restricts answers to this website only.', 'color: #2d4566; font-weight: 600;');
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChatbot);
+      } else {
+        initChatbot();
+      }
+    })();
+  </script>
 
-  document.body.insertAdjacentHTML('beforeend', widgetHTML);
-
-  window.toggleChat = function() {
-    const modal = document.getElementById('chat-modal');
-    modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
-  };
-</script>
 </body>
 </html>

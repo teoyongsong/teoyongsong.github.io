@@ -25,6 +25,7 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
 - **Latest insight** — The homepage highlights the most recent post in a card (above flagship projects) so writing sits next to builds.
 - **Work together** — Persistent **Work with me** in the header and hero; the section below the fold has the consulting profile link and copy-to-clipboard email for project briefs.
 - **Contact** — WhatsApp, email, GitHub, LinkedIn, QR code.
+- **AI Chatbot** — Floating AI assistant (bottom-right) that answers questions *only* about this website, Danny's projects, blog, capabilities, and consulting. It politely redirects off-topic queries. Powered by a curated knowledge base and keyword intelligence.
 - **Scripts** — `visitor-stats.js` is loaded where contact QR codes appear: it wires tap-to-download for the vCard (`.contact-qr`). Visitor/like counter UI was removed to avoid placeholder “--” values when the counter API is unavailable.
 
 ---

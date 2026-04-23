@@ -1782,8 +1782,11 @@ footer .footer-cross-link {
   }
   
   .chat-messages {
+    flex: 1;
+    min-height: 0;
     padding: 16px 18px;
     gap: 14px;
+    overflow-y: auto;
   }
   
   .chat-input-area {
@@ -1793,6 +1796,7 @@ footer .footer-cross-link {
   .suggested-prompts {
     padding: 0 18px 12px;
     gap: 6px;
+    flex-shrink: 0;
   }
   
   .suggested-prompt {
@@ -1803,6 +1807,7 @@ footer .footer-cross-link {
   .chat-disclaimer {
     padding: 10px 18px;
     font-size: 0.68em;
+    flex-shrink: 0;
   }
   
   .chat-toggle {

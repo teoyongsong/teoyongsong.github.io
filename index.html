@@ -363,7 +363,9 @@
   <!-- SiteChat Professional Widget -->
 <!-- Advanced SiteChat Widget -->
 <!-- Advanced SiteChat Widget with Auto Domain Detection -->
+<!-- SiteChat Widget - Auto Domain Detection -->
 <script>
+  // Automatically detect current website domain
   const currentDomain = window.location.hostname;
   const chatbotUrl = `https://webapp-chatbot.streamlit.app/?domain=${currentDomain}`;
   
@@ -389,6 +391,12 @@
     const modal = document.getElementById('chat-modal');
     modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
   };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape") {
+      document.getElementById('chat-modal').style.display = 'none';
+    }
+  });
 </script>
 </body>
 </html>

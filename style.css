@@ -1488,7 +1488,7 @@ footer .footer-cross-link {
   text-decoration: underline;
 }
 
-/* AI Chatbot */
+/* AI Chatbot - Improved v2 */
 .chatbot-container {
   position: fixed;
   bottom: 24px;
@@ -1730,12 +1730,40 @@ footer .footer-cross-link {
 
 .chat-disclaimer {
   text-align: center;
-  padding: 10px 20px 16px;
-  font-size: 0.75em;
+  padding: 12px 20px;
+  font-size: 0.72em;
   color: #64748b;
-  background: #f1f5f9;
+  background: #f8fafc;
   border-top: 1px solid #e2e8f0;
-  line-height: 1.4;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+.suggested-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 20px 16px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.suggested-prompt {
+  background: #e6f0ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.suggested-prompt:hover {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 480px) {

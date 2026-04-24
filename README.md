@@ -25,7 +25,7 @@ Personal portfolio site for **Danny Teo Yong Song**, hosted on [GitHub Pages](ht
 - **Latest insight** — The homepage highlights the most recent post in a card (above flagship projects) so writing sits next to builds.
 - **Work together** — Persistent **Work with me** in the header and hero; the section below the fold has the consulting profile link and copy-to-clipboard email for project briefs.
 - **Contact** — WhatsApp, email, GitHub, LinkedIn, QR code.
-- **AI Chatbot** — Floating AI assistant (bottom-right) that answers questions *only* about this website, Danny's projects, blog, capabilities, and consulting. It politely redirects off-topic queries. Powered by a curated knowledge base and keyword intelligence.
+- **AI Chatbot** — Floating assistant (bottom-right). **Default:** offline keyword answers scoped to this site. **Optional real LLM:** deploy the Cloudflare Worker in `workers/site-chat-proxy/` (keeps API keys off the browser), then add `<meta name="site-chat-api" content="https://…">` in `index.html`. See `workers/site-chat-proxy/README.md`. Client logic lives in `site-ai-chat.js`.
 - **Scripts** — `visitor-stats.js` is loaded where contact QR codes appear: it wires tap-to-download for the vCard (`.contact-qr`). Visitor/like counter UI was removed to avoid placeholder “--” values when the counter API is unavailable.
 
 ---
@@ -44,7 +44,8 @@ The PDF is not linked from the site; see `private/README.md` if you use it as an
 
 ```
 teoyongsong.github.io/
-├── index.html              # Homepage (hero, insight card, featured projects, Work together, Contact)
+├── index.html              # Homepage (hero, insight card, featured projects, Work together, Contact, chat widget)
+├── site-ai-chat.js         # Chat UI + optional LLM via Worker proxy + offline fallback
 ├── robots.txt              # Disallow /private/ (no PDF is stored there on purpose)
 ├── requirements.txt        # fpdf2 — local / optional: build Project Digest PDF
 ├── scripts/
@@ -54,6 +55,8 @@ teoyongsong.github.io/
 │   └── project-digest.pdf  # Project Digest (regenerate via scripts/build_project_digest_pdf.py)
 ├── blog.html               # Blog index
 ├── style.css               # Global styles (layout, blog, projects)
+├── workers/
+│   └── site-chat-proxy/    # Optional Cloudflare Worker: OpenAI-compatible chat proxy (see README inside)
 ├── visitor-stats.js        # Contact QR tap → vCard; optional counter API helpers
 ├── favicon.png
 ├── tys.jpg                 # Header photo
@@ -86,7 +89,7 @@ teoyongsong.github.io/
 
 - **HTML5**, **CSS3** (flexbox, grid, `clamp` / responsive spacing)
 - **GitHub Pages** — no build step
-- **Vanilla JavaScript** — `visitor-stats.js` (contact QR / optional counters)  
+- **Vanilla JavaScript** — `visitor-stats.js` (contact QR / optional counters), `site-ai-chat.js` (chat widget; optional LLM via Worker)  
 - No frameworks or bundler.
 
 ---

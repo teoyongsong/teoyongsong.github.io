@@ -1,0 +1,6 @@
+name = "teoyongsong-site-chat-proxy"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Set secrets via: wrangler secret put OPENAI_API_KEY
+# Optional: wrangler secret put ALLOWED_ORIGIN, CHAT_MODEL, OPENAI_BASE_URL

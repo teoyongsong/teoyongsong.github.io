@@ -363,11 +363,8 @@
 
   <!-- AI Chatbot - Improved -->
   <div class="chatbot-container" id="chatbot-container">
-    <button id="chat-toggle" class="chat-toggle" aria-label="Open AI assistant">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.25">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2z" />
-      </svg>
-      Ask me about this site
+    <button id="chat-toggle" class="chat-toggle" aria-label="Open AI assistant" title="Ask about this site">
+      🤖
     </button>
     
     <div id="chat-window" class="chat-window hidden">
@@ -424,11 +421,11 @@
       };
       
       const suggestedPrompts = [
-        "What are Danny's main projects?",
-        "Tell me about the RAG Studio",
-        "How can I work with Danny?",
-        "What is the latest blog post about?",
-        "Tell me about his 3-day sprints"
+        "What are Danny's main projects?" // Only one visible by default
+        // "Tell me about the RAG Studio",
+        // "How can I work with Danny?",
+        // "What is the latest blog post about?",
+        // "Tell me about his 3-day sprints"
       ];
       
       function addMessage(text, isUser = false) {

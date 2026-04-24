@@ -1501,28 +1501,27 @@ footer .footer-cross-link {
   background: linear-gradient(135deg, #2d4566, #1f2d44);
   color: white;
   border: none;
-  border-radius: 50px;
-  padding: 14px 24px 14px 20px;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.95em;
-  font-weight: 600;
+  justify-content: center;
   box-shadow: 0 6px 20px rgba(31, 45, 68, 0.35);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
+  font-size: 1.6em;
 }
 
 .chat-toggle:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(31, 45, 68, 0.45);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(31, 45, 68, 0.5);
   background: linear-gradient(135deg, #1f2d44, #18223a);
 }
 
 .chat-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .chat-window {

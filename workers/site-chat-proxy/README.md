@@ -1,12 +1,29 @@
 # Site chat proxy (Cloudflare Worker)
 
-GitHub Pages is static only, so **API keys must not live in the browser**. This Worker holds your key and forwards chat requests to an OpenAI-compatible API.
+GitHub Pages is static only, so **API keys must not live in the browser**. This Worker holds your key and runs a **Phase 1 multi-agent orchestrator**.
 
-## What you get
+## Phase 1 architecture
+
+- **Orchestrator agent**: routes each query by intent.
+- **Specialist agents**:
+  - `siteQaAgent`
+  - `projectRecommenderAgent`
+  - `blogInsightAgent`
+  - `leadQualifierAgent`
+  - `scopeGuardAgent` (off-topic refusal)
+- **Tools**:
+  - `search_site_content`
+  - `get_project_details`
+  - `get_blog_posts`
+  - `get_contact_options`
+
+## API contract
 
 - **POST** JSON: `{ "messages": [ { "role": "system"|"user"|"assistant", "content": "..." } ], "model": "optional" }`
-- **Response**: `{ "content": "assistant reply text", "model": "..." }`
+- **Response**: `{ "content": "assistant reply text", "model": "...", "trace": { "intent": "...", "agents": [], "tools": [] } }`
 - **CORS** enabled for browser calls from your portfolio domain
+
+If `OPENAI_API_KEY` is configured, the Worker uses the LLM for final synthesis. If not, it returns a deterministic stitched response from agent outputs.
 
 ## Deploy (Wrangler)
 
